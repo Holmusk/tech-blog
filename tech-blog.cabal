@@ -1,8 +1,8 @@
 cabal-version:       2.0
 name:                tech-blog
 version:             0.0.0
-synopsis:            Blog for Tech Team
-description:         Blog for Tech Team
+synopsis:            Blog for Holmusk Tech Team
+description:         Blog for Holmusk Tech Team
 homepage:            https://github.com/Holmusk/tech-blog
 bug-reports:         https://github.com/Holmusk/tech-blog/issues
 license:             MPL-2.0
@@ -23,10 +23,15 @@ source-repository head
 library
   hs-source-dirs:      src
   exposed-modules:     TechBlog
+                         TechBlog.Blog
+                         TechBlog.Context
                        Prelude
 
   build-depends:       base-noprelude ^>= 4.12.0.0
-                     , relude
+                     , hakyll ^>= 4.12
+                     , pandoc >= 2.6
+                     , relude ^>= 0.4.0
+                     , text >= 1.2
 
   ghc-options:         -Wall
                        -Wincomplete-uni-patterns
@@ -51,7 +56,7 @@ library
                        TypeApplications
                        ViewPatterns
 
-executable tech-blog
+executable site
   hs-source-dirs:      app
   main-is:             Main.hs
 

@@ -53,3 +53,5 @@ TAGS
 .DS_Store
 
 # User specific
+_cache/
+_site/

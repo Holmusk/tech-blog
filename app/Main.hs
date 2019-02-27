@@ -1,7 +1,7 @@
 module Main (main) where
 
-import TechBlog (someFunc)
+import TechBlog (runBlog)
 
 
 main :: IO ()
-main = someFunc
+main = runBlog

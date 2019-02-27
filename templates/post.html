@@ -1,0 +1,19 @@
+<div class="container">
+    <h2 class="text-center text-uppercase text-purple">$title$</h2>
+    <div class="row tag-block text-center">
+        <div class="col-md-12 col-xs-12 tag-block">
+            $for(tagsList)$
+            <span> <a class="btn btn-outline-dark" href="../tags/$tag$">$tag$</a></span>
+            $endfor$
+        </div>
+    </div>
+    <div class="text-center">$date$</div>
+    <div class="content">
+       <div class="row post">
+           <div class="col-12 post-body">
+               $toc$
+               <p class="lead">$body$ </p>
+           </div>
+       </div>
+    </div>
+</div>
