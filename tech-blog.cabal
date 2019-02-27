@@ -1,0 +1,86 @@
+cabal-version:       2.0
+name:                tech-blog
+version:             0.0.0
+synopsis:            Blog for Tech Team
+description:         Blog for Tech Team
+homepage:            https://github.com/Holmusk/tech-blog
+bug-reports:         https://github.com/Holmusk/tech-blog/issues
+license:             MPL-2.0
+license-file:        LICENSE
+author:              Holmusk
+maintainer:          tech@holmusk.com
+copyright:           2019 Holmusk
+category:            Web, Blog
+build-type:          Simple
+extra-doc-files:     README.md
+                   , CHANGELOG.md
+tested-with:         GHC == 8.6.3
+
+source-repository head
+  type:                git
+  location:            https://github.com/Holmusk/tech-blog.git
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     TechBlog
+                       Prelude
+
+  build-depends:       base-noprelude ^>= 4.12.0.0
+                     , relude
+
+  ghc-options:         -Wall
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
+  default-extensions:  ConstraintKinds
+                       DeriveGeneric
+                       GeneralizedNewtypeDeriving
+                       LambdaCase
+                       OverloadedStrings
+                       RecordWildCards
+                       ScopedTypeVariables
+                       StandaloneDeriving
+                       TupleSections
+                       TypeApplications
+                       ViewPatterns
+
+executable tech-blog
+  hs-source-dirs:      app
+  main-is:             Main.hs
+
+  build-depends:       base-noprelude ^>= 4.12.0.0
+                     , tech-blog
+                     , relude
+
+  ghc-options:         -Wall
+                       -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
+  default-extensions:  ConstraintKinds
+                       DeriveGeneric
+                       GeneralizedNewtypeDeriving
+                       LambdaCase
+                       OverloadedStrings
+                       RecordWildCards
+                       ScopedTypeVariables
+                       StandaloneDeriving
+                       TupleSections
+                       TypeApplications
+                       ViewPatterns
