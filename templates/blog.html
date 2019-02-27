@@ -1,0 +1,25 @@
+<section class="container info blog">
+    <div class="content">
+        <div class="row post">
+            <div class="col-md-10 col-xs-10 offset-md-1 offset-xs-1 mb-3">
+                <h2>TAGS</h2>
+                $for(tagsList)$
+                <span> <a class="btn btn-outline-dark" href="../tags/$tag$">$tag$</a> </span>
+                $endfor$
+
+            </div>
+            <div class="col-md-10 col-xs-10 offset-md-1 offset-xs-1">
+                <h2 class="text-uppercase"> $page$ </h2>
+                <hr>
+                <ul>
+                $for(posts)$
+                  <li>
+                      <h4> <a href="$stripExtension(url)$">$title$</a></h4>
+                      <h5>$date$</h5>
+                  </li>
+                $endfor$
+                </ul>
+            </div>
+         </div>
+     </div>
+</section>
