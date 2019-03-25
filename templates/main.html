@@ -1,0 +1,16 @@
+<section class="container info blog">
+    <div class="content">
+        <div class="row post">
+            <div class="col-md-10 col-xs-10 offset-md-1 offset-xs-1">
+            <ul>
+                $for(posts)$
+                <li>
+                    <h4> <a href="$stripExtension(url)$">$title$</a></h4>
+                    <h5>$date$</h5>
+                </li>
+                 $endfor$
+            </ul>
+            </div>
+        </div>
+    </div>
+</section>
