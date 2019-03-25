@@ -6,7 +6,7 @@ import Hakyll (applyAsTemplate, compile, compressCssCompiler, constField, copyFi
                defaultContext, hakyll, idRoute, loadAndApplyTemplate, makeItem, match, route,
                templateBodyCompiler, (.||.))
 
-import TechBlog.Blog (createBlog, createTags, matchBlogPosts)
+import TechBlog.Blog (createBlog, createMain, createTags, matchBlogPosts)
 import TechBlog.Context (stripExtension)
 
 
@@ -20,6 +20,9 @@ runBlog = hakyll $ do
     match "css/*" $ do
         route   idRoute
         compile compressCssCompiler
+
+    -- Main pages
+    createMain
 
     -- post pages
     matchBlogPosts
