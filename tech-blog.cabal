@@ -25,6 +25,7 @@ library
   exposed-modules:     TechBlog
                          TechBlog.Blog
                          TechBlog.Context
+                         TechBlog.Project
                        Prelude
 
   build-depends:       base-noprelude ^>= 4.12.0.0

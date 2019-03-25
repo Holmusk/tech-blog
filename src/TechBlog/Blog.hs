@@ -15,6 +15,7 @@ import Hakyll (Pattern, Rules, applyAsTemplate, buildTags, compile, constField, 
 import Text.Pandoc.Options (WriterOptions (..))
 
 import TechBlog.Context (pageCtx, postCtx, postCtxWithTags)
+import TechBlog.Project (mkProjectCtx)
 
 
 createMain :: Rules ()
@@ -24,6 +25,7 @@ createMain = create ["index.html"] $ do
         posts <- recentFirst =<< loadAll "blog/*"
         let ctx = listField "posts" postCtx (pure $ take 3 posts)
                <> defaultContext
+               <> mkProjectCtx
                <> constField "page" "Main"
         makeItem ""
             >>= applyAsTemplate ctx
