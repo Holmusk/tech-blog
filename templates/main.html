@@ -2,6 +2,7 @@
     <div class="content">
         <div class="row post">
             <div class="col-md-10 col-xs-10 offset-md-1 offset-xs-1">
+                <h2> Latest blog posts </h2>
             <ul>
                 $for(posts)$
                 <li>
@@ -11,6 +12,19 @@
                  $endfor$
             </ul>
             </div>
+        </div>
+        <div class="row post">
+        <div class="col-md-10 col-xs-10 offset-md-1 offset-xs-1">
+            <h2> Projects </h2>
+            <ul>
+            $for(projects)$
+                <li>
+                    <h4> <a href="https://github.com/Holmusk/$pLink$">$pName$</a></h4>
+                <h5>$pDesc$</h5>
+                </li>
+            $endfor$
+            </ul>
+        </div>
         </div>
     </div>
 </section>
