@@ -49,7 +49,7 @@ The Haskell backend that replaced our old backend was significantly more efficie
 
 Here is a chart of our AWS expenditure as we switched to a Haskell backend:
 
-<Insert chart>
+<img src="/images/aws-costs.png" class="img-fluid" alt="AWS costs graph">
 
 ## The Bad
 
@@ -57,19 +57,19 @@ Here is a chart of our AWS expenditure as we switched to a Haskell backend:
 
 > There are very few well-trodden paths in Haskell, expect to make lots of decisions about your stack.
 
-Apart from things like `Yesod`, there aren’t really many framework style Haskell projects that come with best practices on how to structure your application or guides on how to do common tasks like handling file uploads, user authentication, database management etc.
+Apart from things like [`Yesod`](https://www.yesodweb.com/), there aren’t really many framework style Haskell projects that come with best practices on how to structure your application or guides on how to do common tasks like handling file uploads, user authentication, database management etc.
 
-Working on Haskell projects feels very much like working with `react` projects in that you have to bring in external libraries piecemeal for most of the features you want and the libraries aren’t necessarily designed with the assumption that they will be used together in that particular combination.
+Working on Haskell projects feels very much like working with [`react`](https://reactjs.org/) projects in that you have to bring in external libraries piecemeal for most of the features you want and the libraries aren’t necessarily designed with the assumption that they will be used together in that particular combination.
 
 Conventions also codify some hard-learned lessons, in their absence most of those lessons have to be re-learned by your team.
 
 ### Lack of libraries
 
-> While the quality of libraries is excellent, the quantity can be rather limiting. Don’t expect the equivalent of passportjs or paperclip.
+> While the quality of libraries is excellent, the quantity can be rather limiting. Don’t expect the equivalent of [passportjs](http://www.passportjs.org/) or [vanity](http://vanity.labnotes.org/).
 
 The best Haskell libraries tend to be rather low-level, providing the building blocks rather than solving one cohesive problem by themselves.
 
-For instance, you won’t find any ‘batteries included’ libraries for user authentication which support OAuth integration, work with most major providers, have a password reset functionality, etc. If you are coming from other technologies like Rails, where creating admin interfaces is a simple one day job with `activeadmin`, you would be surprised at how cumbersome and repetitive some of the common tasks can get.  
+For instance, you won’t find any ‘batteries included’ libraries for user authentication which support OAuth integration, work with most major providers, have a password reset functionality, etc. If you are coming from other technologies like Rails, where creating admin interfaces is a simple one day job with [`activeadmin`](https://activeadmin.info/), you would be surprised at how cumbersome and repetitive some of the common tasks can get.  
 
 ### First-class developer experience
 
@@ -95,7 +95,7 @@ Upgrading to a new stack LTS almost always ends up becoming a blocking task that
 
 Having experienced the bliss of GHC being your programming assistant, it can be extremely tempting to rely on evermore fancy type system features to make more illegal states unrepresentable.
 
-Soon, you find yourself encoding entire chunks of your business logic into the type system while a simple run-time check might have sufficed. Just because Haskell allows you to express something in the type system doesn’t mean that it is a good idea to do so.
+Soon, you find yourself encoding entire chunks of your business logic into the type system while a simple run-time check might have sufficed. Just because Haskell allows you to express something in the type system doesn’t mean that it is always a good idea to do so.
 
 These endeavours increase the on-boarding difficulty of new developers into your project, can drastically increase your compile times and just make code plain unreadable sometimes.
 
