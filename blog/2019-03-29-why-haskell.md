@@ -87,7 +87,7 @@ This translates to either missed opportunities or just extra time spent trying t
 
 Most Haskell projects don’t really have a concept of backwards compatibility. They regularly release breaking changes because they tend to be either hobby projects or projects that simply have ambitious technical goals which don’t necessarily align with your company’s goals of having stable interfaces.
 
-Upgrading to a new stack LTS almost always ends up becoming a blocking task that requires many tangential changes or reviewing changelogs carefully of all the libraries that you depend on to make sure that there aren’t any behaviour changes.
+Upgrading to a new compiler version almost always ends up becoming a blocking task that requires many tangential changes or reviewing changelogs carefully of all the libraries that you depend on to make sure that there aren’t any behaviour changes.
 
 ### The bait of type safety
 
