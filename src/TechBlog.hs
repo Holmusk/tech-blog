@@ -2,9 +2,10 @@ module TechBlog
        ( runBlog
        ) where
 
-import Hakyll (applyAsTemplate, compile, compressCssCompiler, constField, copyFileCompiler, create,
+import Hakyll (applyAsTemplate, compile, compressCss, constField, copyFileCompiler, create,
                defaultContext, hakyll, idRoute, loadAndApplyTemplate, makeItem, match, route,
-               templateBodyCompiler, (.||.))
+               setExtension, templateBodyCompiler, (.||.))
+import Hakyll.Web.Sass (sassCompiler)
 
 import TechBlog.Blog (createBlog, createMain, createTags, matchBlogPosts)
 import TechBlog.Context (stripExtension)
@@ -17,9 +18,10 @@ runBlog = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
-    match "css/*" $ do
-        route   idRoute
-        compile compressCssCompiler
+    match "css/main.sass" $ do
+        route $ setExtension "css"
+        let compressCssItem = fmap compressCss
+        compile (compressCssItem <$> sassCompiler)
 
     -- Main pages
     createMain

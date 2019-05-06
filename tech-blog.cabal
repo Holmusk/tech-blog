@@ -30,6 +30,7 @@ library
 
   build-depends:       base-noprelude ^>= 4.12.0.0
                      , hakyll ^>= 4.12
+                     , hakyll-sass
                      , pandoc >= 2.6
                      , relude ^>= 0.4.0
                      , text >= 1.2
