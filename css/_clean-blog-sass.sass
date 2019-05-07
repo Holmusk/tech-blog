@@ -1,4 +1,5 @@
 /*!
+ * MODIFIED VERSION OF:
  * Start Bootstrap - Clean Blog v5.0.5 (https://startbootstrap.com/template-overviews/clean-blog)
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/master/LICENSE) */
@@ -6,7 +7,7 @@
 body
   font-size: 20px
   color: #212529
-  font-family: 'Lora', 'Times New Roman', serif
+  // font-family: 'Lora', 'Times New Roman', serif
 
 p
   line-height: 1.5
@@ -16,7 +17,8 @@ p
 
 h1, h2, h3, h4, h5, h6
   font-weight: 800
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+  +bold()
+  // font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
 
 a
   color: #212529
@@ -58,7 +60,7 @@ img
   position: absolute
   border-bottom: 1px solid #e9ecef
   background-color: white
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+  // font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
   .navbar-brand
     font-weight: 800
     color: #343a40
@@ -141,7 +143,7 @@ header.masthead
     line-height: 1.1
     display: block
     margin: 10px 0 0
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+    //font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
   .post-heading
     h1
       font-size: 35px
@@ -154,12 +156,12 @@ header.masthead
       font-size: 24px
       font-weight: 600
       margin: 10px 0 30px
-      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+      //font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
     .meta
       font-size: 20px
       font-weight: 300
       font-style: italic
-      font-family: 'Lora', 'Times New Roman', serif
+      //font-family: 'Lora', 'Times New Roman', serif
       a
         color: #fff
 
@@ -227,10 +229,10 @@ header.masthead
     background: none
     -webkit-box-shadow: none !important
     box-shadow: none !important
-    font-family: 'Lora', 'Times New Roman', serif
+    //: 'Lora', 'Times New Roman', serif
   input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
     color: #868e96
-    font-family: 'Lora', 'Times New Roman', serif
+    //font-family: 'Lora', 'Times New Roman', serif
   label
     font-size: 0.85em
     line-height: 1.764705882em
@@ -274,7 +276,7 @@ footer
   letter-spacing: 1px
   text-transform: uppercase
   border-radius: 0
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+  //font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
 
 .btn-primary
   background-color: #0085A1

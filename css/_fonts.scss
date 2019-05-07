@@ -1,0 +1,50 @@
+
+// neue_einstellung
+@font-face {
+  font-family: 'neue_einstellungbold';
+  src: url('/fonts/neueeinstellung-bold.woff2') format('woff2'),
+       url('/fonts/neueeinstellung-bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'neue_einstellungmedium';
+  src: url('/fonts/neueeinstellung-medium.woff2') format('woff2'),
+       url('/fonts/neueeinstellung-medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'neue_einstellungregular';
+  src: url('/fonts/neueeinstellung-regular.woff2') format('woff2'),
+       url('/fonts/neueeinstellung-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// argent_cf
+@font-face {
+  font-family: 'argent_cflight_italic';
+  src: url('/fonts/argentcf-lightitalic.woff2') format('woff2'),
+       url('/fonts/argentcf-lightitalic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// font helpers (mixins)
+@mixin bold() {
+  font-family: 'neue_einstellungbold';
+}
+@mixin regular() {
+  font-family: 'neue_einstellungregular';
+}
+@mixin medium() {
+  font-family: 'neue_einstellungmedium';
+}
+@mixin italic() {
+  font-family: 'argent_cflight_italic';
+}
+
+// body {
+//   background-color: black;
+// }
