@@ -24,7 +24,7 @@ allProjects = traverse makeItem
     [ Project
         { pName = "Elm Street"
         , pLink = "elm-street"
-        , pImg  = ""
+        , pImg  = "project_placeholder.svg"
         , pDesc = "🌳 Crossing the road between Haskell and Elm "
         }
     ]

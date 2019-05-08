@@ -6,6 +6,7 @@ $holmusk-blue: #192D5B
 $header-grey: #F3F3F3
 $dark-grey: #4A4A4A
 $light-grey: #CACACA
+$holmusk-green: #A2D729
 
 // fonts
 @import "fonts"
@@ -18,3 +19,37 @@ body
 
 // clean-blog base
 @import "clean-blog-sass"
+
+.front-page-banner
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  margin-top: 150px
+  .banner-title
+    color: white
+    font-size: 2.5rem
+    line-height: 3rem
+    +bold()
+    flex: 0 1 30%
+  .banner-img
+    flex: 0 1 65%
+    img
+      width: 100%
+
+.project-card
+  margin-top: 2rem
+  img
+    width: 100%
+.project-card-title
+  margin-top: 20px
+  color: $dark-grey
+  +bold()
+  font-size: 19px
+.project-card-link
+  +medium()
+  color: $holmusk-green
+  font-size: 12px
+  text-decoration: underline
+  &:hover
+    color: darken($holmusk-green, 10%)
+

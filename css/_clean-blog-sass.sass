@@ -7,7 +7,6 @@
 body
   font-size: 20px
   color: #212529
-  // font-family: 'Lora', 'Times New Roman', serif
 
 p
   line-height: 1.5
@@ -17,8 +16,11 @@ p
 
 h1, h2, h3, h4, h5, h6
   font-weight: 800
+  color: $dark-grey
   +bold()
-  // font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+
+h1
+  font-size: 30px
 
 a
   color: #212529
@@ -62,8 +64,6 @@ img
   background-color: white
   // font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
   .navbar-brand
-    font-weight: 800
-    color: #343a40
   .navbar-toggler
     font-size: 12px
     font-weight: 800
@@ -87,7 +87,7 @@ img
         color: rgba(255, 255, 255, 0.8)
     .navbar-nav > li.nav-item > a
       padding: 10px 20px
-      color: #fff
+      color: $holmusk-blue
       &:focus, &:hover
         color: rgba(255, 255, 255, 0.8)
 
@@ -190,17 +190,17 @@ header.masthead
       color: #0085A1
     >
       .post-title
-        font-size: 30px
+        font-size: 18px
         margin-top: 30px
         margin-bottom: 10px
       .post-subtitle
         font-weight: 300
         margin: 0 0 10px
   .post-meta
-    font-size: 18px
-    font-style: italic
+    font-size: 12px
     margin-top: 0
-    color: #868e96
+    color: $dark-grey
+    +regular()
     > a
       text-decoration: none
       color: #212529
@@ -210,7 +210,7 @@ header.masthead
 
 @media only screen and (min-width: 768px)
   .post-preview > a > .post-title
-    font-size: 36px
+    font-size: 20px
 
 .floating-label-form-group
   font-size: 14px
