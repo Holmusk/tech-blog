@@ -1,20 +1,24 @@
 <div class="container">
-    <h2 class="text-center text-uppercase text-purple">$title$</h2>
-    <div class="row tag-block text-center">
-        <div class="col-md-12 col-xs-12 tag-block">
-            $for(tagsList)$
-            <span> <a class="btn btn-outline-dark" href="../tags/$tag$">$tag$</a></span>
-            $endfor$
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h2 class="title">$title$</h2>
+            <div class="post-context">
+              <span class="author">Author Here | </span>
+              <span class="date">$date$</span>
+            </div>
+            <div class="tag-list">
+              $for(tagsList)$
+              <span><a class="tag" href="../tags/$tag$">$tag$</a></span>
+              $endfor$
+            </div>
         </div>
     </div>
-    <div class="text-center">$date$</div>
 
     <article>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            $toc$
-
+            <div class="toc">$toc$</div>
             $body$
           </div>
         </div>

@@ -53,3 +53,31 @@ body
   &:hover
     color: darken($holmusk-green, 10%)
 
+.tag
+  +medium()
+  color: $blue
+  text-decoration: underline
+  text-transform: uppercase
+  font-size: 12px
+  &:hover
+    color: darken($blue, 10%)
+
+.post-context
+  font-size: 12px
+  .author
+    +regular()
+    color: $dark-grey
+  .date
+    +regular()
+    color: $light-grey
+
+.toc
+  font-size: 15px
+  width: 70%
+  padding: 1em
+  margin: 50px 0px
+  background-color: $light-blue
+  border: solid 1px $holmusk-blue
+  a
+    color: $dark-grey
+

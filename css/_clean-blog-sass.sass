@@ -11,6 +11,9 @@ body
 p
   line-height: 1.5
   margin: 30px 0
+  font-size: 16px
+  +regular()
+  color: $dark-grey
   a
     text-decoration: underline
 
@@ -29,9 +32,12 @@ a
   &:focus, &:hover
     color: #0085A1
 
-blockquote
-  font-style: italic
-  color: #868e96
+blockquote > p
+  +italic()
+  color: $dark-grey
+  font-size: 20px
+  border-left: solid 5px $light-blue
+  padding-left: 1em
 
 .section-heading
   font-size: 36px
