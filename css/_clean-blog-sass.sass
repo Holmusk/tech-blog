@@ -64,63 +64,6 @@ img
     color: #fff
     background: transparent
 
-#mainNav
-  position: absolute
-  border-bottom: 1px solid #e9ecef
-  background-color: white
-  // font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
-  .navbar-brand
-  .navbar-toggler
-    font-size: 12px
-    font-weight: 800
-    padding: 13px
-    text-transform: uppercase
-    color: #343a40
-  .navbar-nav > li.nav-item > a
-    font-size: 12px
-    font-weight: 800
-    letter-spacing: 1px
-    text-transform: uppercase
-
-@media only screen and (min-width: 992px)
-  #mainNav
-    border-bottom: 1px solid transparent
-    background: transparent
-    .navbar-brand
-      padding: 10px 20px
-      color: #fff
-      &:focus, &:hover
-        color: rgba(255, 255, 255, 0.8)
-    .navbar-nav > li.nav-item > a
-      padding: 10px 20px
-      color: $holmusk-blue
-      &:focus, &:hover
-        color: rgba(255, 255, 255, 0.8)
-
-@media only screen and (min-width: 992px)
-  #mainNav
-    &.is-fixed
-      // when the user scrolls down, we hide the header right above the viewport
-      position: fixed
-      top: -67px
-      -webkit-transition: -webkit-transform 0.2s
-      transition: -webkit-transform 0.2s
-      transition: transform 0.2s
-      transition: transform 0.2s, -webkit-transform 0.2s
-      border-bottom: 1px solid white
-      .navbar-brand
-        color: #212529
-        &:focus, &:hover
-          color: #0085A1
-      .navbar-nav > li.nav-item > a
-        color: #212529
-        &:focus, &:hover
-          color: #0085A1
-    &.is-visible
-      // if the user changes the scrolling direction, we show the header
-      -webkit-transform: translate3d(0, 100%, 0)
-      transform: translate3d(0, 100%, 0)
-
 header.masthead
   margin-bottom: 50px
   background: no-repeat center center
@@ -149,7 +92,6 @@ header.masthead
     line-height: 1.1
     display: block
     margin: 10px 0 0
-    //font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
   .post-heading
     h1
       font-size: 35px
@@ -162,12 +104,11 @@ header.masthead
       font-size: 24px
       font-weight: 600
       margin: 10px 0 30px
-      //font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+
     .meta
       font-size: 20px
       font-weight: 300
       font-style: italic
-      //font-family: 'Lora', 'Times New Roman', serif
       a
         color: #fff
 
@@ -235,10 +176,8 @@ header.masthead
     background: none
     -webkit-box-shadow: none !important
     box-shadow: none !important
-    //: 'Lora', 'Times New Roman', serif
   input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
     color: #868e96
-    //font-family: 'Lora', 'Times New Roman', serif
   label
     font-size: 0.85em
     line-height: 1.764705882em
@@ -282,7 +221,6 @@ footer
   letter-spacing: 1px
   text-transform: uppercase
   border-radius: 0
-  //font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
 
 .btn-primary
   background-color: #0085A1
