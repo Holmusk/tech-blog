@@ -94,6 +94,43 @@ body
     .nav-link:focus,
     .nav-link:hover
       color: white
+  .navbar-toggler
+    border-color: $holmusk-blue
+    color: $holmusk-blue
+    +medium()
+    font-size: 14px
+    line-height: 20px
+    text-transform: uppercase
+    padding-top: 6px
 
 #mainNav:not(.with-banner) ~ #page-content
   margin-top: 150px
+
+#page-content
+  min-height: calc(100vh - 225px)
+
+footer
+  background-color: $header-grey
+  border-top: solid 1px $light-grey
+  padding-bottom: 25px
+  .copyright
+    +regular()
+    color: $dark-grey
+    font-size: 12px
+    text-align: left
+
+// mobile adjustments
+@media (max-width: 767.98px)
+  .toc
+    width: 100%
+  #mainNav > .container
+    display: flex
+    flex-direction: column
+  #mainNav .navbar-collapse
+    text-align: center
+    padding-top: 10px
+  .front-banner-navbar
+    text-align: center
+  .front-page-banner
+    flex-direction: column
+    text-align: center
