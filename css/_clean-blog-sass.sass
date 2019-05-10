@@ -1,0 +1,232 @@
+/*!
+ * MODIFIED VERSION OF:
+ * Start Bootstrap - Clean Blog v5.0.5 (https://startbootstrap.com/template-overviews/clean-blog)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/master/LICENSE) */
+
+body
+  font-size: 20px
+  color: #212529
+
+p
+  line-height: 1.5
+  margin: 30px 0
+  font-size: 16px
+  +regular()
+  color: $dark-grey
+  a
+    text-decoration: underline
+
+h1, h2, h3, h4, h5, h6
+  font-weight: 800
+  color: $dark-grey
+  +bold()
+
+h1
+  font-size: 30px
+
+a
+  color: #212529
+  -webkit-transition: all 0.2s
+  transition: all 0.2s
+  &:focus, &:hover
+    color: #0085A1
+
+blockquote > p
+  +italic()
+  color: $dark-grey
+  font-size: 20px
+  border-left: solid 5px $light-blue
+  padding-left: 1em
+
+.section-heading
+  font-size: 36px
+  font-weight: 700
+  margin-top: 60px
+
+.caption
+  font-size: 14px
+  font-style: italic
+  display: block
+  margin: 0
+  padding: 10px
+  text-align: center
+  border-bottom-right-radius: 5px
+  border-bottom-left-radius: 5px
+
+::selection
+  color: #fff
+  background: #0085A1
+  text-shadow: none
+
+img
+  &::selection, &::-moz-selection
+    color: #fff
+    background: transparent
+
+header.masthead
+  margin-bottom: 50px
+  background: no-repeat center center
+  background-color: $light-blue
+  background-attachment: scroll
+  position: relative
+  background-size: cover
+  .overlay
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    opacity: 0.5
+  .page-heading, .post-heading, .site-heading
+    padding: 200px 0 150px
+    color: white
+  .page-heading, .site-heading
+    text-align: center
+  .page-heading h1, .site-heading h1
+    font-size: 50px
+    margin-top: 0
+  .page-heading .subheading, .site-heading .subheading
+    font-size: 24px
+    font-weight: 300
+    line-height: 1.1
+    display: block
+    margin: 10px 0 0
+  .post-heading
+    h1
+      font-size: 35px
+    .meta
+      line-height: 1.1
+      display: block
+    .subheading
+      line-height: 1.1
+      display: block
+      font-size: 24px
+      font-weight: 600
+      margin: 10px 0 30px
+
+    .meta
+      font-size: 20px
+      font-weight: 300
+      font-style: italic
+      a
+        color: #fff
+
+@media only screen and (min-width: 768px)
+  header.masthead
+    .page-heading, .post-heading, .site-heading
+      padding: 200px 0
+
+@media only screen and (min-width: 768px)
+  header.masthead
+    .page-heading h1, .site-heading h1
+      font-size: 80px
+
+@media only screen and (min-width: 768px)
+  header.masthead .post-heading
+    h1
+      font-size: 55px
+    .subheading
+      font-size: 30px
+
+.post-preview >
+  a
+    color: #212529
+    &:focus, &:hover
+      text-decoration: none
+      color: #0085A1
+    >
+      .post-title
+        font-size: 18px
+        margin-top: 30px
+        margin-bottom: 10px
+      .post-subtitle
+        font-weight: 300
+        margin: 0 0 10px
+  .post-meta
+    font-size: 12px
+    margin-top: 0
+    color: $dark-grey
+    +regular()
+    > a
+      text-decoration: none
+      color: #212529
+      &:focus, &:hover
+        text-decoration: underline
+        color: #0085A1
+
+@media only screen and (min-width: 768px)
+  .post-preview > a > .post-title
+    font-size: 20px
+
+.floating-label-form-group
+  font-size: 14px
+  position: relative
+  margin-bottom: 0
+  padding-bottom: 0.5em
+  border-bottom: 1px solid #dee2e6
+  input, textarea
+    font-size: 1.5em
+    position: relative
+    z-index: 1
+    padding: 0
+    resize: none
+    border: none
+    border-radius: 0
+    background: none
+    -webkit-box-shadow: none !important
+    box-shadow: none !important
+  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
+    color: #868e96
+  label
+    font-size: 0.85em
+    line-height: 1.764705882em
+    position: relative
+    z-index: 0
+    top: 2em
+    display: block
+    margin: 0
+    -webkit-transition: top 0.3s ease, opacity 0.3s ease
+    transition: top 0.3s ease, opacity 0.3s ease
+    vertical-align: middle
+    vertical-align: baseline
+    opacity: 0
+  .help-block
+    margin: 15px 0
+
+.floating-label-form-group-with-value label
+  top: 0
+  opacity: 1
+
+.floating-label-form-group-with-focus label
+  color: #0085A1
+
+form .form-group:first-child .floating-label-form-group
+  border-top: 1px solid #dee2e6
+
+footer
+  .list-inline
+    margin: 0
+    padding: 0
+  .copyright
+    margin-bottom: 0
+
+.btn
+  font-size: 14px
+  font-weight: 800
+  padding: 15px 25px
+  letter-spacing: 1px
+  text-transform: uppercase
+  border-radius: 0
+
+.btn-primary
+  background-color: #0085A1
+  border-color: #0085A1
+  &:hover, &:focus, &:active
+    color: #fff
+    background-color: #00657b !important
+    border-color: #00657b !important
+
+.btn-lg
+  font-size: 16px
+  padding: 25px 35px

@@ -1,0 +1,133 @@
+
+// variables
+$light-blue: #BAD2ED
+$blue: #3360CC
+$holmusk-blue: #192D5B
+$header-grey: #F3F3F3
+$dark-grey: #4A4A4A
+$light-grey: #CACACA
+$holmusk-green: #A2D729
+
+// fonts
+@import "fonts"
+
+// clean-blog base
+@import "clean-blog-sass"
+
+body
+  font-family: 'neue_einstellungregular', sans-serif
+
+.front-page-banner
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  margin-top: 150px
+  .banner-title
+    color: white
+    font-size: 2.5rem
+    line-height: 3rem
+    +bold()
+    flex: 0 1 30%
+  .banner-img
+    flex: 0 1 65%
+    img
+      width: 100%
+
+.project-card
+  margin-top: 2rem
+  img
+    width: 100%
+.project-card-title
+  margin-top: 20px
+  color: $dark-grey
+  +bold()
+  font-size: 19px
+.project-card-link
+  +medium()
+  color: $holmusk-green
+  font-size: 12px
+  text-decoration: underline
+  &:hover
+    color: darken($holmusk-green, 10%)
+
+.tag
+  +medium()
+  color: $blue
+  text-decoration: underline
+  text-transform: uppercase
+  font-size: 12px
+  &:hover
+    color: darken($blue, 10%)
+
+.post-context
+  font-size: 12px
+  .date
+    +regular()
+    color: $light-grey
+
+.toc
+  font-size: 15px
+  width: 70%
+  padding: 1em
+  margin: 50px 0px
+  background-color: $light-blue
+  border: solid 1px $holmusk-blue
+  a
+    color: $dark-grey
+
+#mainNav
+  background-color: $header-grey
+  .nav-link
+    +medium()
+    font-size: 14px
+    text-transform: uppercase
+    text-decoration: none
+    color: $holmusk-blue
+    &:focus,
+    &:hover
+      color: $blue
+  &.with-banner
+    background-color: $light-blue
+    .nav-link:focus,
+    .nav-link:hover
+      color: white
+  .navbar-toggler
+    border-color: $holmusk-blue
+    color: $holmusk-blue
+    +medium()
+    font-size: 14px
+    line-height: 20px
+    text-transform: uppercase
+    padding-top: 6px
+
+#mainNav:not(.with-banner) ~ #page-content
+  margin-top: 150px
+
+#page-content
+  min-height: calc(100vh - 225px)
+
+footer
+  background-color: $header-grey
+  border-top: solid 1px $light-grey
+  padding-bottom: 25px
+  .copyright
+    +regular()
+    color: $dark-grey
+    font-size: 12px
+    text-align: left
+
+// mobile adjustments
+@media (max-width: 767.98px)
+  .toc
+    width: 100%
+  #mainNav > .container
+    display: flex
+    flex-direction: column
+  #mainNav .navbar-collapse
+    text-align: center
+    padding-top: 10px
+  .front-banner-navbar
+    text-align: center
+  .front-page-banner
+    flex-direction: column
+    text-align: center

@@ -4,9 +4,7 @@
 
   $for(posts)$
     <div class="post-preview">
-      <a href="$url$">
-        <h2 class="post-title">$title$</h2>
-      </a>
+      <a href="$url$"><h2 class="post-title">$title$</h2></a>
       <p class="post-meta">Posted on $date$</p>
     </div>
     <hr>
@@ -16,14 +14,13 @@
   <h1> Projects </h1>
 
   $for(projects)$
-    <a href="https://github.com/Holmusk/$pLink$">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">$pName$</h5>
-          <p class="card-text">$pDesc$</p>
-        </div>
+    <div class="project-card" style="width: 18rem;">
+      <a href="https://github.com/Holmusk/$pLink$" class="project-card-illustration"><img src="/images/$pImg$" alt="$pName$"></a>
+      <div class="project-card-body">
+        <h5 class="project-card-title">$pName$: $pDesc$</h5>
+        <a href="https://github.com/Holmusk/$pLink$" class="project-card-link">GITHUB</a>
       </div>
-    </a>
+    </div>
   $endfor$
 
 </div>

@@ -49,7 +49,7 @@ The Haskell backend that replaced our old backend was significantly more efficie
 
 Here is a chart of our AWS expenditure as we switched to a Haskell backend:
 
-<img src="/images/aws-costs.png" class="img-fluid" alt="AWS costs graph">
+<img src="/images/blogposts/2019-03-29-why-haskell/aws-costs.png" class="img-fluid" alt="AWS costs graph">
 
 ## The Bad
 

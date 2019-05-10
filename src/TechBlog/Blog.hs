@@ -30,7 +30,7 @@ createMain = create ["index.html"] $ do
         makeItem ""
             >>= applyAsTemplate ctx
             >>= loadAndApplyTemplate "templates/main.html" ctx
-            >>= loadAndApplyTemplate "templates/default.html" ctx
+            >>= loadAndApplyTemplate "templates/default_with_banner.html" ctx
             >>= relativizeUrls
 
 
