@@ -9,39 +9,41 @@
   <title>Holmusk | Main</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/clean-blog.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg fixed-top with-banner" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="./index.html">Holmusk</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="./index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./blog.html">Blog Posts</a>
-          </li>
-        </ul>
-      </div>
+        <a class="navbar-brand" href="./index.html">
+          <img src="./images/holmusk_logo_title.svg" alt="Holmusk Tech Blog">
+        </a>
+        <div class="front-banner-navbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./blog.html">Blog Posts</a>
+            </li>
+          </ul>
+        </div>
     </div>
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('/images/home-bg.jpg')">
+  <header class="masthead">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>Holmusk Tech Blog</h1>
+          <div class="front-page-banner">
+            <div class="banner-title">Big Data Technology Healthcare</div>
+            <div class="banner-img"><img src="./images/illust_data_analytics.svg" alt></div>
           </div>
         </div>
       </div>
@@ -49,7 +51,7 @@
   </header>
 
   <!-- Main Content -->
- <div class="container">
+ <div class="container" id="page-content">
    <div class="row">
      <div class="col-lg-8 col-md-10 mx-auto">
 
@@ -57,9 +59,7 @@
 
   
     <div class="post-preview">
-      <a href="./blog/2019-03-29-why-haskell.html">
-        <h2 class="post-title">Haskell - The Good, the Bad, The Ugly</h2>
-      </a>
+      <a href="./blog/2019-03-29-why-haskell.html"><h2 class="post-title">Haskell - The Good, the Bad, The Ugly</h2></a>
       <p class="post-meta">Posted on March 29, 2019</p>
     </div>
     <hr>
@@ -69,14 +69,13 @@
   <h1> Projects </h1>
 
   
-    <a href="https://github.com/Holmusk/elm-street">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Elm Street</h5>
-          <p class="card-text">🌳 Crossing the road between Haskell and Elm </p>
-        </div>
+    <div class="project-card" style="width: 18rem;">
+      <a href="https://github.com/Holmusk/elm-street" class="project-card-illustration"><img src="./images/project_placeholder.svg" alt="Elm Street"></a>
+      <div class="project-card-body">
+        <h5 class="project-card-title">Elm Street: 🌳 Crossing the road between Haskell and Elm </h5>
+        <a href="https://github.com/Holmusk/elm-street" class="project-card-link">GITHUB</a>
       </div>
-    </a>
+    </div>
   
 
 </div>
@@ -88,13 +87,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <p class="copyright text-muted">Blog theme by blackrockdigital • Photo by Patrick Tomasso on Unsplash</p>
+        <p class="copyright text-muted">©2019 Holmusk</p>
       </div>
     </div>
   </div>
 </footer>
 
 
-  <script src="./js/main.js" charset="utf-8"></script>
 </body>
 </html>

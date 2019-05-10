@@ -9,64 +9,59 @@
   <title>Holmusk | Haskell - The Good, the Bad, The Ugly</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/clean-blog.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="../index.html">Holmusk</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../blog.html">Blog Posts</a>
-          </li>
-        </ul>
-      </div>
+        <a class="navbar-brand" href="../index.html">
+          <img src="../images/holmusk_logo_title.svg" alt="Holmusk Tech Blog">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../blog.html">Blog Posts</a>
+            </li>
+          </ul>
+        </div>
     </div>
   </nav>
 
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('/images/home-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>Holmusk Tech Blog</h1>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
   <!-- Main Content -->
- <div class="container">
+ <div class="container" id="page-content">
    <div class="row">
      <div class="container">
-    <h2 class="text-center text-uppercase text-purple">Haskell - The Good, the Bad, The Ugly</h2>
-    <div class="row tag-block text-center">
-        <div class="col-md-12 col-xs-12 tag-block">
-            
-            <span> <a class="btn btn-outline-dark" href="../tags/haskell">haskell</a></span>
-            
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h2 class="title">Haskell - The Good, the Bad, The Ugly</h2>
+            <div class="post-context">
+              <span class="date">March 29, 2019</span>
+            </div>
+            <div class="tag-list">
+              
+              <span><a class="tag" href="../tags/haskell">haskell</a></span>
+              
+            </div>
         </div>
     </div>
-    <div class="text-center">March 29, 2019</div>
 
     <article>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <ul>
+            <div class="toc"><ul>
 <li><a href="#haskell---the-good-the-bad-the-ugly">Haskell - The Good, the Bad, The Ugly</a><ul>
 <li><a href="#the-good">The Good</a><ul>
 <li><a href="#hiring">Hiring</a></li>
@@ -85,8 +80,7 @@
 </ul></li>
 <li><a href="#conclusions">Conclusions</a></li>
 </ul></li>
-</ul>
-
+</ul></div>
             <h1 id="haskell---the-good-the-bad-the-ugly">Haskell - The Good, the Bad, The Ugly</h1>
 <p>Holmusk is a digital healthcare startup based in Singapore with a focus on mental health and chronic conditions.</p>
 <p>Approximately a year ago, we chose to begin the process of migrating our backend into Haskell. As of March 2019, Holmusk is now powered fully by Haskell and this post is a summary of our experiences so far.</p>
@@ -119,7 +113,7 @@
 </blockquote>
 <p>The Haskell backend that replaced our old backend was significantly more efficient. It allowed us to run fewer servers to support the same workload. The cost savings from a smaller AWS bill can make a difference if your startup is in the phase where every dollar counts.</p>
 <p>Here is a chart of our AWS expenditure as we switched to a Haskell backend:</p>
-<p><img src="../images/aws-costs.png" class="img-fluid" alt="AWS costs graph"></p>
+<p><img src="../images/blogposts/2019-03-29-why-haskell/aws-costs.png" class="img-fluid" alt="AWS costs graph"></p>
 <h2 id="the-bad">The Bad</h2>
 <h3 id="lack-of-conventions">Lack of conventions</h3>
 <blockquote>
@@ -172,13 +166,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <p class="copyright text-muted">Blog theme by blackrockdigital • Photo by Patrick Tomasso on Unsplash</p>
+        <p class="copyright text-muted">©2019 Holmusk</p>
       </div>
     </div>
   </div>
 </footer>
 
 
-  <script src="../js/main.js" charset="utf-8"></script>
 </body>
 </html>
