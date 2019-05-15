@@ -24,6 +24,11 @@ h1, h2, h3, h4, h5, h6
 
 h1
   font-size: 30px
+h2
+  font-size: 30px
+  padding-bottom: 20px
+h3
+  font-size: 20px
 
 a
   color: #212529
@@ -33,7 +38,7 @@ a
     color: #0085A1
 
 blockquote > p
-  +italic()
+  +light_italic()
   color: $dark-grey
   font-size: 20px
   border-left: solid 5px $light-blue
@@ -78,15 +83,15 @@ header.masthead
     height: 100%
     width: 100%
     opacity: 0.5
-  .page-heading, .post-heading, .site-heading
+  .page-heading, .post-heading
     padding: 200px 0 150px
     color: white
-  .page-heading, .site-heading
+  .page-heading
     text-align: center
-  .page-heading h1, .site-heading h1
+  .page-heading h1
     font-size: 50px
     margin-top: 0
-  .page-heading .subheading, .site-heading .subheading
+  .page-heading .subheading, .subheading
     font-size: 24px
     font-weight: 300
     line-height: 1.1
@@ -114,12 +119,12 @@ header.masthead
 
 @media only screen and (min-width: 768px)
   header.masthead
-    .page-heading, .post-heading, .site-heading
+    .page-heading, .post-heading
       padding: 200px 0
 
 @media only screen and (min-width: 768px)
   header.masthead
-    .page-heading h1, .site-heading h1
+    .page-heading h1
       font-size: 80px
 
 @media only screen and (min-width: 768px)
