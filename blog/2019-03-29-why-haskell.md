@@ -4,8 +4,6 @@ description: A short summary of Holmusk's experience with Haskell so far
 tags: haskell
 ---
 
-# Haskell - The Good, the Bad, The Ugly
-
 Holmusk is a digital healthcare startup based in Singapore with a focus on mental health and chronic conditions.
 
 Approximately a year ago, we chose to begin the process of migrating our backend into Haskell. As of March 2019, Holmusk is now powered fully by Haskell and this post is a summary of our experiences so far.
