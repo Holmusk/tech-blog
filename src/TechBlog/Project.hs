@@ -24,8 +24,14 @@ allProjects = traverse makeItem
     [ Project
         { pName = "Elm Street"
         , pLink = "elm-street"
-        , pImg  = "project_placeholder.svg"
-        , pDesc = "🌳 Crossing the road between Haskell and Elm "
+        , pImg  = "elm_street.png"
+        , pDesc = "Crossing the road between Haskell and Elm"
+        }
+    , Project
+        { pName = "Servant HMAC Authentication"
+        , pLink = "servant-hmac-auth"
+        , pImg  = "servant_hmac_auth.png"
+        , pDesc = "Providing protection for all servant endpoints with HMAC"
         }
     ]
 
