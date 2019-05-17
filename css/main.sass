@@ -36,6 +36,9 @@ body
     img
       width: 100%
 
+.projects
+  margin-bottom: 50px
+
 .project-card
   margin-top: 2rem
   img
@@ -70,7 +73,7 @@ body
 
 .toc
   font-size: 15px
-  width: 70%
+  width: 55%
   padding: 1em
   margin: 50px 0px
   background-color: $light-blue
@@ -121,6 +124,9 @@ footer
 
 // mobile adjustments
 @media (max-width: 767.98px)
+  .projects
+    flex-direction: column
+    align-items: center
   .toc
     width: 100%
   #mainNav > .container

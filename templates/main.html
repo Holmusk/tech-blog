@@ -1,4 +1,4 @@
-<div class="col-lg-8 col-md-10 mx-auto">
+<div class="col-lg-10 col-md-12 mx-auto">
 
   <h1> Latest Blog Posts </h1>
 
@@ -12,15 +12,16 @@
 
 
   <h1> Projects </h1>
-
-  $for(projects)$
+  <div class="projects d-flex justify-content-start flex-wrap">
+    $for(projects)$
     <div class="project-card" style="width: 18rem;">
-      <a href="https://github.com/Holmusk/$pLink$" class="project-card-illustration"><img src="/images/$pImg$" alt="$pName$"></a>
+      <a href="https://github.com/Holmusk/$pLink$" class="project-card-illustration"><img src="/images/projects/$pImg$" alt="$pName$"></a>
       <div class="project-card-body">
         <h5 class="project-card-title">$pName$: $pDesc$</h5>
         <a href="https://github.com/Holmusk/$pLink$" class="project-card-link">GITHUB</a>
       </div>
     </div>
-  $endfor$
+    $endfor$
+  </div>
 
 </div>
