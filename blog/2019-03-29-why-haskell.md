@@ -43,11 +43,7 @@ This also means that code for a feature that we wrote many months ago and havenâ
 
 > If you need to scale, Haskellâ€™s runtime efficiency can save you a substantial amount of money, especially at the beginning when you are the most resource constrained.
 
-The Haskell backend that replaced our old backend was significantly more efficient. It allowed us to run fewer servers to support the same workload. The cost savings from a smaller AWS bill can make a difference if your startup is in the phase where every dollar counts.
-
-Here is a chart of our AWS expenditure as we switched to a Haskell backend:
-
-<img src="/images/blogposts/2019-03-29-why-haskell/aws-costs.png" class="img-fluid" alt="AWS costs graph">
+The Haskell backend that replaced our old backend was significantly more efficient. It allowed us to run fewer servers to support the same workload. The cost savings from a smaller AWS bill can make a difference if your startup is in the phase where every dollar counts. As an example, we cut our AWS expenditure by ~50% on a higher workload compared to our previous stack.
 
 ## The Bad
 
