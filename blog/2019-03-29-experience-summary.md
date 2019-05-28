@@ -1,5 +1,5 @@
 ---
-title: Haskell - The Good, the Bad, The Ugly
+title: Haskell - An Experience Summary
 description: A short summary of Holmusk's experience with Haskell so far
 tags: haskell
 ---
@@ -13,7 +13,7 @@ Approximately a year ago, we chose to begin the process of migrating our backend
 This post assumes that you have some idea of what Haskell is and why someone might use it for their personal projects. This is a summation of our experiences when trying to use it as a startup.
 
 
-## The Good
+## The Pros
 
 ### Hiring
 
@@ -45,7 +45,7 @@ This also means that code for a feature that we wrote many months ago and haven�
 
 The Haskell backend that replaced our old backend was significantly more efficient. It allowed us to run fewer servers to support the same workload. The cost savings from a smaller AWS bill can make a difference if your startup is in the phase where every dollar counts. As an example, we cut our AWS expenditure by ~50% on a higher workload compared to our previous stack.
 
-## The Bad
+## The Cons
 
 ### Lack of conventions
 
@@ -63,7 +63,7 @@ Conventions also codify some hard-learned lessons, in their absence most of thos
 
 The best Haskell libraries tend to be rather low-level, providing the building blocks rather than solving one cohesive problem by themselves.
 
-For instance, you won’t find any ‘batteries included’ libraries for user authentication which support OAuth integration, work with most major providers, have a password reset functionality, etc. If you are coming from other technologies like Rails, where creating admin interfaces is a simple one day job with [`activeadmin`](https://activeadmin.info/), you would be surprised at how cumbersome and repetitive some of the common tasks can get.  
+For instance, you won’t find any ‘batteries included’ libraries for user authentication which support OAuth integration, work with most major providers, have a password reset functionality, etc. If you are coming from other technologies like Rails, where creating admin interfaces is a simple with [`activeadmin`](https://activeadmin.info/), you would be surprised at how cumbersome and repetitive some of the common tasks can get.  
 
 ### First-class developer experience
 
@@ -71,9 +71,7 @@ For instance, you won’t find any ‘batteries included’ libraries for user a
 
 When AWS releases interesting new tools like Lambda, expect to not be able to play around with them through Haskell right away. You will be a second-class citizen in most developer products.
 
-This translates to either missed opportunities or just extra time spent trying to setup common tools like CI systems which are designed to work well with popular languages but have trouble adjusting to Haskell projects (I’m looking at you CircleCI).
-
-## The Ugly
+This translates to either missed opportunities or just extra time spent trying to setup common tools like CI systems which are designed to work well with popular languages but have trouble adjusting to Haskell projects.
 
 ### Breaking changes in libraries
 
