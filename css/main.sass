@@ -108,6 +108,23 @@ body
     text-transform: uppercase
     padding-top: 6px
 
+.navbar-brand-content
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    color: $holmusk-blue
+    font-size: 33px
+    letter-spacing: -2px
+    height: 100%
+    img
+        margin-right: 20px
+    div
+        padding-top: 5px
+    .name
+        +bold()
+    .product
+        +light_italic()
+
 #mainNav:not(.with-banner) ~ #page-content
   margin-top: 150px
 
