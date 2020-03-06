@@ -22,12 +22,6 @@ projectCtx =
 allProjects :: Compiler [Item Project]
 allProjects = traverse makeItem
     [ Project
-        { pName = "Elm Street"
-        , pLink = "elm-street"
-        , pImg  = "elm_street.png"
-        , pDesc = "Crossing the road between Haskell and Elm"
-        }
-    , Project
         { pName = "Servant HMAC Authentication"
         , pLink = "servant-hmac-auth"
         , pImg  = "servant_hmac_auth.png"
@@ -62,6 +56,12 @@ allProjects = traverse makeItem
         , pLink = "s3_cache_image"
         , pImg  = "s3_cache_image.png"
         , pDesc = "A library to show images from S3 and keep them in the cache directory"
+        }
+    , Project
+        { pName = "Postgresql Simple Named"
+        , pLink = "postgresql-simple-named"
+        , pImg  = "postgresql-simple-named.png"
+        , pDesc = "Introducing named parameters for the postgresql-simple library"
         }
     ]
 
