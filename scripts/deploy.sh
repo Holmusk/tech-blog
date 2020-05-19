@@ -2,7 +2,7 @@
 set -eo pipefail
 
 # Clean rebuild
-cabal new-run site rebuild
+stack run site rebuild
 
 # Create deploy environment inside of .deploy directory
 mkdir .deploy

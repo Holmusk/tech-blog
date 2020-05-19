@@ -4,21 +4,31 @@ language: haskell
 git:
   depth: 5
 
-cabal: "2.4"
-
 cache:
   directories:
   - "$HOME/.cabal/store"
+  - "$HOME/.stack"
+  - "$TRAVIS_BUILD_DIR/.stack-work"
 
 
 matrix:
   include:
   - ghc: 8.6.3
-
+    cabal: "2.4"
 
 install:
-  - cabal new-update
-  - cabal new-build --enable-tests --enable-benchmarks
+  # HLint check
+  - curl -sSL https://raw.github.com/ndmitchell/neil/master/misc/travis.sh | sh -s -- hlint .
+
+  - |
+    if [ -z "$STACK_YAML" ]; then
+      cabal v2-update
+      cabal v2-build --enable-tests --enable-benchmarks
+    else
+      curl -sSL https://get.haskellstack.org/ | sh
+      stack --version
+      stack build --system-ghc --test --bench --no-run-tests --no-run-benchmarks --ghc-options=-Werror
+    fi
 
 script:
   - echo 'No tests'

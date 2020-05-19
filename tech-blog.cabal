@@ -32,7 +32,7 @@ library
                      , hakyll ^>= 4.12
                      , hakyll-sass
                      , pandoc >= 2.6
-                     , relude ^>= 0.4.0
+                     , relude ^>= 0.5.0
                      , text >= 1.2
 
   ghc-options:         -Wall
