@@ -9,12 +9,12 @@ Blog for Holmusk Tech Team
 
 1. Build backend:
    ```
-   cabal new-build
+   stack build
    ```
 2. Run blog:
    ```
-   cabal new-exec site rebuild
-   cabal new-exec site watch
+   stack exec site rebuild
+   stack exec site watch
    ```
 3. Open `localhost:8000`
 
