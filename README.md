@@ -13,8 +13,8 @@ Blog for Holmusk Tech Team
    ```
 2. Run blog:
    ```
-   stack exec site rebuild
-   stack exec site watch
+   stack run site rebuild
+   stack run site watch
    ```
 3. Open `localhost:8000`
 
