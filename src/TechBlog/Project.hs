@@ -63,6 +63,12 @@ allProjects = traverse makeItem
         , pImg  = "postgresql-simple-named.png"
         , pDesc = "Introducing named parameters for the postgresql-simple library"
         }
+    , Project
+        { pName = "Servant Docs Simple"
+        , pLink = "servant-docs-simple"
+        , pImg  = "servant_docs_simple.png"
+        , pDesc = "Generate an overview of Servant API endpoints"
+        }
     ]
 
 mkProjectCtx :: Context a
