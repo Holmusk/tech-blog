@@ -1,5 +1,7 @@
 ---
 title: Generating documentation from API types
+author: Noel Kwan
+github: kwannoel
 description: Writing our own library to parse and render Servant API types as documentation
 tags: haskell
 ---
