@@ -1,5 +1,7 @@
 ---
 title: Haskell - An Experience Summary
+author: Sai Subramanian
+github: arbus
 description: A short summary of Holmusk's experience with Haskell so far
 tags: haskell
 ---

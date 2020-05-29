@@ -3,7 +3,14 @@
         <div class="col-lg-10 col-md-12 mx-auto">
             <h1 class="title">$title$</h1>
             <div class="post-context">
-              <span class="date">$date$</span>
+              <div>
+                <span class="author"> $author$ </span>
+                $if(github)$
+                    <span><a class="github" href="https://github.com/$github$/">@$github$</a></span>
+                $endif$
+              </div>
+
+              <div class="date">$date$</div>
             </div>
             <div class="tag-list">
               $for(tagsList)$
