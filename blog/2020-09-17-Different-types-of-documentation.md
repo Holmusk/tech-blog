@@ -1,23 +1,17 @@
 ---
-title: Experiences of our engineer interns - Summer 2020
-author: Noel Kwan, Leyli Ramazanova, Ivan Leo, Daniel Zhou
-github: kwannoel
-description: Our interns share their experience and insights from the internship
-tags: haskell
+title: Technical writing series - Different types of documentation
+author: Capucine Barcellona
+description: What are the various types of documentation (user stories, UAT, requirement specifications) and the different audiences involved?
+tags: documentation, technical writing, software requirements, product
 ---
 
 # Different types of documentation
-
-Category: General Product
-Notes: What are the various types of documentation (user stories, UAT, requirement specifications) and the different audiences involved. 
-Owner: Capucine Barcellona
-Status: Completed
 
 As I started my internship with Holmusk, I imagined technical writers as the ‘bridge’ between designers and software developers. Technical writers note down how a product should work, what errors might occur, and what interactions a user might face. I’ve worked to document these processes over the past two months — but I also encountered bigger questions of who my audience was and why technical writing matters.
 
 Is it true that technical writers only write for software developers? Essentially, no. Technical writing can be geared toward different audiences and take various forms. These audiences might include software developers, but also designers, compliance experts and product testers. Accordingly, a technical writer can produce different types of documentation to match their audiences' needs. At Holmusk, I have encountered Software Requirements Specifications documents, User Stories and User Acceptance Testing documents. Navigating each of these styles gave me insight into the software development process — and, more broadly, into how the structure of a piece of writing can make all the difference. 
 
-**Software Requirements Specifications**
+### Software Requirements Specifications
 
 The preferred type of documentation, when writing for developers and compliance, is a **Software Requirements Specifications (SRS)** document. An SRS outlines the key requirements of each product feature — what should this page do? How do its sub-components interact? It also gives a high-level overview of the user flow, outlining the different user interactions and what they result in. My favourite part has been documenting error states. What does it take to trigger an error and how can it be resolved? Identifying possible errors requires methodical and logical thinking. Often, it also requires patience — sometimes, you find a new error state just when you thought you had them all covered. 
 
