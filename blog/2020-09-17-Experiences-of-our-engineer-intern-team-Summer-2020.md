@@ -29,7 +29,7 @@ The diagram below can give you a sneak peek of what is behind the curtains of ou
 
 ![](/images/blogposts/neo4j_schema.png)
 
-With reference to the above diagram, this allows our users about relationships. For example, we could ask who has worked on a particular project or with a potential client.
+With reference to the above diagram, this allows our users to learn about relationships. For example, we could ask who has worked on a particular project or with a potential client.
 
 The answers we receive would then provide guidance for critical business decisions.
 
@@ -58,7 +58,8 @@ We considered [AWS Neptune](https://aws.amazon.com/neptune/) along with other al
 
 ### On the simplicity of Neo4j
 
-The queries in Neo4j pattern match against the actual database structure, which is helpful in gaining intuition in using them. The two most basic components are nodes and relationships.  Using those components, we have the ability to create nodes and relationships between them. The example below can give you some insight about how it works.
+The queries in Neo4j pattern match against the actual database structure, which is helpful in gaining intuition in using them. The two most basic components are nodes and relationships.
+Using those components, we have the ability to model Holmusk's network. The examples below can give you some insight about how it works.
 
 *Creating nodes*
 
@@ -90,7 +91,7 @@ Let us take a closer look at what that involved.
 
 In the context of React, there are various types of components. Of interest to us are the *stateless (functional)* and *stateful (imperative) components.*
 
-*Statelessness* means that components to not manipulate any state within, they only render state passed to them in their *props*.
+*Statelessness* means that components do not manipulate any state within, they only render state passed to them in their *props*.
 
 *Statefulness* means that components store state within and manipulate / render this state.
 
@@ -98,10 +99,11 @@ An example of a button in an stateful style is:
 
 ```jsx
 const Button = () => {
-	const [name,setName] = useState('Ivan')
-	<button onClick = {()=>setName("Tomatoes")})>
-		Set Name
-		</button>	
+  const [name,setName] = useState('Ivan')
+
+  <button onClick = {()=>setName("Tomatoes")})>
+    Set Name
+  </button>	
 }
 ```
 
@@ -111,29 +113,29 @@ As a stateless component however, a button looks as follows:
 const SET_USER_NAME = 'SET_USER_NAME'
 
 const INITIAL_STATE = {
-	name:null,
-	age: null,
-	occupation: null
+  name:null,
+  age: null,
+  occupation: null
 }
 
 function reducer(state, action) {
   switch (action.type) {
     case SET_USER_NAME:
-			const { name } = action.payload
-			return {...state,name}
+      const { name } = action.payload
+      return {...state,name}
     default:
-			return state
+      return state
   }
 }
 
 const setUserName = () => {
-	
-	const [name,dispatch] = useReducer(reducer, INITIAL_STATE)
-	return(
-		<button onClick = {()=>dispatch({type:SET_USER_NAME,payload:{name:"Tomatoes"}})>
-		Set Name
-		</button>
-	)
+  const [name,dispatch] = useReducer(reducer, INITIAL_STATE)
+
+  return(
+    <button onClick = {()=>dispatch({type:SET_USER_NAME,payload:{name:"Tomatoes"}})>
+      Set Name
+    </button>
+  )
 }
 ```
 
@@ -149,16 +151,16 @@ Say our application hinges on a series of buttons being clicked and we have defi
 function reducer(state, action) {
   switch (action.type) {
     case action1:
-			// do something
+      // do something
 
     case action2:
-			// do something
-		
-	  case action3:
-			// do something
+      // do something
+
+    case action3:
+      // do something
 
     default:
-			return state
+      return state
   }
 
 ```
@@ -203,34 +205,34 @@ For example, suppose there are three different buttons we want to render on our 
 
 ```jsx
 const Button = () => {
-	const [name,setName] = useState('Ivan')
+  const [name,setName] = useState('Ivan')
 
-	const function1 = () => {
-	doSomething ...
-}
+  const function1 = () => {
+    doSomething ...
+  }
 
-	const function2 = () => {
-	doSomething ...
-}
+  const function2 = () => {
+    doSomething ...
+  }
 
-const function3 = () => {
-	doSomething
-}
-return (
+  const function3 = () => {
+    doSomething
+  }
 
-	<button onClick = {()=>function1()})>
-		Set Name
-		</button>	
-	
-	<button onClick = {()=>function2()})>
-		Set Name
-		</button>	
+  return (
 
-	
-	<button onClick = {()=>function3()})>
-		Set Name
-		</button>	
-)
+    <button onClick = {()=>function1()})>
+      Set Name
+    </button>	
+
+    <button onClick = {()=>function2()})>
+      Set Name
+    </button>	
+
+    <button onClick = {()=>function3()})>
+      Set Name
+    </button>	
+  )
 }
 ```
 
@@ -238,22 +240,21 @@ Now, let's examine our view logic for our functional component:
 
 ```jsx
 const setUserName = ()=>{
-	
-	const [name,dispatch] = useReducer(reducer, INITIAL_STATE)
-	return(
-		<button 
-			onClick = {()=>dispatch({type:action1,payload:{name:"Tomatoes"}})>
-		Set Name
-		</button>
-		<button 
-			onClick = {()=>dispatch({type:action2,payload:{name:"Tomatoes"}})>
-		Set Name
-		</button>
-		<button 
-			onClick = {()=>dispatch({type:action3,payload:{name:"Tomatoes"}})>
-		Set Name
-		</button>
-	)
+  const [name,dispatch] = useReducer(reducer, INITIAL_STATE)
+
+  return(
+    <button onClick = {()=>dispatch({type:action1,payload:{name:"Tomatoes"}})>
+      Set Name
+    </button>
+
+    <button onClick = {()=>dispatch({type:action2,payload:{name:"Tomatoes"}})>
+      Set Name
+    </button>
+
+    <button onClick = {()=>dispatch({type:action3,payload:{name:"Tomatoes"}})>
+      Set Name
+    </button>
+  )
 }
 ```
 
