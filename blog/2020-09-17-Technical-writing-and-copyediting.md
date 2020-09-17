@@ -1,19 +1,11 @@
 ---
-title: Experiences of our engineer interns - Summer 2020
-author: Noel Kwan, Leyli Ramazanova, Ivan Leo, Daniel Zhou
-github: kwannoel
-description: Our interns share their experience and insights from the internship
-tags: haskell
+title: Technical writing series - Technical writing and copyediting
+author: Min Li Khor
+description: Some reflections about the parallels between technical writing and copyediting, and their importance.
+tags: technical writing, product, documentation
 ---
 
-# Technical writing and copyediting
-
-Category: Workflow
-Notes: Some reflections about the parallels between the two, and their importance.
-Owner: Min Li Khor
-Status: Completed
-
-## **The Parallels Between Copyediting and Technical Writing**
+## **The Parallels Between the Two**
 
 If you had asked me two and a half months ago what a technical writer does, I could not have given you a satisfactory answer. Save for the essays that I write for my university coursework, I am not much of a writer. My interests and experiences lie more in proofreading and copyediting. As I curiously read the job description posting for a Design and Technical Writer Intern at Holmusk, my eyes snagged on the requirements 'proofreading' and 'able to identify gaps in a narrative' which convinced me to apply.
 
@@ -23,7 +15,7 @@ When I was first exposed to what a technical writer does, I felt out of my eleme
 
 For the past two years, I have copyedited for my university publication. In my first year, when queried by others about what a copyeditor is, I would explain that I correct spelling mistakes and grammatical errors in articles before they are published. I quickly learned that I was wrong in my definition. Yes, those two things fall in the domain of copyediting, but exclusively, they are more of a proofreader's job.
 
-So, what extra does copyediting bring to the table? Copyediting goes the additional step from proofreading by checking for accuracy, consistency, and flow. A copyeditor works with an author's piece of writing as a base and ensures that the narration is smooth, the facts line up, and the writing follows the convention of the chosen style guide.
+So, what does copyediting bring to the table? Copyediting goes the additional step from proofreading by checking for accuracy, consistency, and flow. A copyeditor works with an author's piece of writing as a base and ensures that the narration is smooth, the facts line up, and the writing follows the convention of the chosen style guide.
 
 ### **Why is copyediting important?**
 
