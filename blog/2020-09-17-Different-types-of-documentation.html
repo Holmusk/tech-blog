@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Holmusk Tech Blog">
+  <meta name="keywords" content="Haskell, Elm, Dart, Functional progarmming, FP">
+  <meta name="author" content="Holmusk" />
+  <title>Holmusk | Technical writing series - Different types of documentation</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="../index.html">
+            <img src="../images/holmusk_product_blog.svg" alt="Holmusk Tech Blog">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../blog.html">Blog Posts</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+ <div class="container" id="page-content">
+   <div class="row">
+     <div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-md-12 mx-auto">
+            <h1 class="title">Technical writing series - Different types of documentation</h1>
+            <div class="post-context">
+              <div>
+                <span class="author"> Capucine Barcellona </span>
+                
+              </div>
+
+              <div class="date">September 17, 2020</div>
+            </div>
+            <div class="tag-list">
+              
+              <span><a class="tag" href="../tags/documentation.html">documentation</a></span>
+              
+              <span><a class="tag" href="../tags/technical writing.html">technical writing</a></span>
+              
+              <span><a class="tag" href="../tags/software requirements.html">software requirements</a></span>
+              
+              <span><a class="tag" href="../tags/product.html">product</a></span>
+              
+            </div>
+        </div>
+    </div>
+
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-md-12 mx-auto">
+            <div class="toc"><ul>
+<li><a href="#different-types-of-documentation">Different types of documentation</a><ul>
+<li><a href="#software-requirements-specifications">Software Requirements Specifications</a></li>
+</ul></li>
+</ul></div>
+            <h1 id="different-types-of-documentation">Different types of documentation</h1>
+<p>As I started my internship with Holmusk, I imagined technical writers as the ‘bridge’ between designers and software developers. Technical writers note down how a product should work, what errors might occur, and what interactions a user might face. I’ve worked to document these processes over the past two months — but I also encountered bigger questions of who my audience was and why technical writing matters.</p>
+<p>Is it true that technical writers only write for software developers? Essentially, no. Technical writing can be geared toward different audiences and take various forms. These audiences might include software developers, but also designers, compliance experts and product testers. Accordingly, a technical writer can produce different types of documentation to match their audiences’ needs. At Holmusk, I have encountered Software Requirements Specifications documents, User Stories and User Acceptance Testing documents. Navigating each of these styles gave me insight into the software development process — and, more broadly, into how the structure of a piece of writing can make all the difference.</p>
+<h3 id="software-requirements-specifications">Software Requirements Specifications</h3>
+<p>The preferred type of documentation, when writing for developers and compliance, is a <strong>Software Requirements Specifications (SRS)</strong> document. An SRS outlines the key requirements of each product feature — what should this page do? How do its sub-components interact? It also gives a high-level overview of the user flow, outlining the different user interactions and what they result in. My favourite part has been documenting error states. What does it take to trigger an error and how can it be resolved? Identifying possible errors requires methodical and logical thinking. Often, it also requires patience — sometimes, you find a new error state just when you thought you had them all covered.</p>
+<p>SRS documents can help developers in <em>pre-development</em>, i.e. before a product is developed. They describe, in writing, what the designers have in mind — allowing developers to implement their vision seamlessly and remain aware of important details. Interestingly, over my internship, I mainly worked on SRS documents <em>post-development</em>. A post-development SRS acts as an archive, or a ’snapshot’ of a product at a point in time. It reflects the changes made to a product during the development phase. This is important, too, because it provides a platform for future product development and centralises all of a product’s information. I kept compliance as a key audience in mind — ensuring that each part of the product was accounted for and could be traced back through meticulous numbering and coding.</p>
+<p>Ultimately, the more detail in an SRS, the better. This gives developers a clear idea of what to implement or change. It also ensures that compliance requirements are met, and facilitates all future communication about a product’s features. I found that writing SRS post-development involves a lot of detail. Since the product already exists, animations, screenshots and design choices can also be documented. I’ve enjoyed working on design platforms to reflect the current state of a product and inserting the images into my documentation. A picture is worth one thousand words, they say? Although in reality, images are meant to supplement the writing. Clarity is essential in technical writing — every word on the page should have a purpose, and every image should nicely fit into that purpose.</p>
+<p><strong>User Stories</strong></p>
+<p>Another type of documentation I was exposed to at Holmusk is <strong>User Stories</strong>. These are also written for software developers and/or compliance experts. User stories include similar details to an SRS document, but they put the focus on a product’s <em>users</em>. They take on the perspective of a user trying to use a product. They include <em>personas</em>, or fictional users who have a specific aim — this looks something like, “As a [user persona], I want [goal] so that [some reason]”. For example: “As a registered user of X app, I want to log in so that I can access my profile screen.”</p>
+<p>Thinking of personas allows technical writers and developers to think through the eyes of an external party. What happens if the user attempts a certain action? What parts of the flow seem less intuitive to an outsider (thus guiding future product improvements)? Over my internship, I had the chance to ’translate’ some user stories into SRS documents. This allowed me to see the overlap between the two, noticing how they present similar content in a different way. Technical writers need to have a built-in awareness of <em>who they are writing for</em> and <em>what perspective they are writing from</em>, and playing with different types of documentation gave me some great insights.</p>
+<p><strong>User Acceptance Testing document</strong></p>
+<p>A third type of documentation in product development is a <strong>User Acceptance Testing (UAT) document</strong>. This is geared toward participants in a UAT test — people who go through a product’s different features and ensure they work as intended, or note down any obstacles to usability. UATs can either involve external testers or be conducted internally by the product team (including UX/UI designers, software developers, technical writers and other team members). External testers do not know beforehand how a product should work. The UAT document is their introduction to the intended flow, to all possible user interactions and to the actions that trigger success/error states.</p>
+<p>In the case of internal testing, a UAT document might appear less essential. A product team that is testing their own product must be already familiar with its requirements. However, a UAT document can outline the testing requirements step-by-step and streamline the process, ensuring nothing is overlooked. It is also important for compliance and traceability, as it keeps track of everything that might have gone wrong and when.</p>
+<p>I am only just working on UAT documents in the last step of my internship. This involves ‘translating’ details from SRS documents and user stories into a different, tester-centred format. Again, I’ll be shifting gears in who I’m writing for and what perspective I’m writing from.</p>
+<p>Ultimately, writing different types of technical documentation has expanded my view of what words can do. The way a document is structured makes a big difference — even if the content remains similar across different formats. Keeping my audience in mind — whether it includes developers, compliance experts or UAT participants — gives my writing a purpose and lets me contribute a small step toward creating a seamless product.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+</div>
+
+   </div>
+ </div>
+
+ <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-md-12 mx-auto">
+        <p class="copyright text-muted">©2019 Holmusk</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

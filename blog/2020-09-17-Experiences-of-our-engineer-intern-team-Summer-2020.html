@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Holmusk Tech Blog">
+  <meta name="keywords" content="Haskell, Elm, Dart, Functional progarmming, FP">
+  <meta name="author" content="Holmusk" />
+  <title>Holmusk | Experiences of our engineer interns - Summer 2020</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="../index.html">
+            <img src="../images/holmusk_product_blog.svg" alt="Holmusk Tech Blog">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../blog.html">Blog Posts</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+ <div class="container" id="page-content">
+   <div class="row">
+     <div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-md-12 mx-auto">
+            <h1 class="title">Experiences of our engineer interns - Summer 2020</h1>
+            <div class="post-context">
+              <div>
+                <span class="author"> Noel Kwan, Leyli Ramazanova, Ivan Leo, Daniel Zhou </span>
+                
+              </div>
+
+              <div class="date">September 17, 2020</div>
+            </div>
+            <div class="tag-list">
+              
+              <span><a class="tag" href="../tags/haskell.html">haskell</a></span>
+              
+              <span><a class="tag" href="../tags/software engineering.html">software engineering</a></span>
+              
+              <span><a class="tag" href="../tags/internships.html">internships</a></span>
+              
+            </div>
+        </div>
+    </div>
+
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-md-12 mx-auto">
+            <div class="toc"><ul>
+<li><a href="#the-project-we-worked-on"><strong>The Project we worked on</strong></a><ul>
+<li><a href="#project-architecture">Project Architecture</a><ul>
+<li><a href="#frontend">Frontend</a></li>
+<li><a href="#backend">Backend</a></li>
+<li><a href="#database">Database</a></li>
+<li><a href="#on-the-simplicity-of-neo4j">On the simplicity of Neo4j</a></li>
+</ul></li>
+<li><a href="#functional-vs-imperative">Functional vs Imperative</a><ul>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#reusablenested-components">Reusable/Nested Components</a></li>
+</ul></li>
+<li><a href="#git-for-newbies">Git for newbies</a><ul>
+<li><a href="#git-rebase-101">Git rebase 101</a></li>
+<li><a href="#git-reflog">Git reflog</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#daniel">Daniel</a><ul>
+<li><a href="#milestones-are-a-great-way-to-stay-motivated">Milestones are a great way to stay motivated</a></li>
+</ul></li>
+<li><a href="#leyli">Leyli</a><ul>
+<li><a href="#ask-google-or-ask-a-teammatejust-make-sure-you-ask">Ask Google or ask a teammate—just make sure you ask</a></li>
+<li><a href="#as-a-newbie-especially-step-0break-down-tasks-and-step-1understand-exactly-what-needs-to-be-done">As a newbie especially, step 0—break down tasks, and step 1—understand exactly what needs to be done</a></li>
+<li><a href="#console-and-documentation-are-your-friends-in-learning-a-language-from-scratch">Console and documentation are your friends in learning a language from scratch</a></li>
+<li><a href="#set-your-priorities-straight">Set your priorities straight</a></li>
+<li><a href="#code-quality">Code quality</a></li>
+</ul></li>
+<li><a href="#ivan">Ivan</a><ul>
+<li><a href="#great-autonomy">Great Autonomy!</a></li>
+<li><a href="#functional-beats-imperative">Functional beats imperative</a></li>
+</ul></li>
+<li><a href="#noel">Noel</a><ul>
+<li><a href="#what-should-your-priorities-be">What should your priorities be?</a></li>
+<li><a href="#mentoring-tips">Mentoring tips</a></li>
+<li><a href="#be-conservative-and-practical">Be conservative and practical</a></li>
+<li><a href="#code-reviews">Code reviews</a></li>
+<li><a href="#the-bigger-picture">The bigger picture</a></li>
+</ul></li>
+</ul></div>
+            <h1 id="the-project-we-worked-on"><strong>The Project we worked on</strong></h1>
+<p>To start off, let us talk about the problem we were trying to solve.</p>
+<p>In a rapidly expanding company like Holmusk, <em>institutional knowledge</em> is decentralized, making it difficult for an individual to tap this information.</p>
+<p><em>Institutional knowledge</em> alludes to the information we have as a company — the collective network of people and companies we have worked with, our research, our professional experiences and so on.</p>
+<p>This provides business intelligence we can utilize when planning strategies for Holmusk. For example, we can examine existing relationships to discover strategic partnerships, or find impactful projects.</p>
+<p>This problem can be solved in two parts:</p>
+<ol type="1">
+<li><p>By aggregating the sources of data we already have. For instance we can extract data from LinkedIn, storing the network of people and companies we know.</p></li>
+<li><p>Allowing our users to ask meaningful questions to search for information. For instance, who has worked on a particular project or knows someone at a specific company.</p></li>
+</ol>
+<p>Our team of four software engineer interns has been working on such a solution in the past 2 months, and the product is the <strong>Holmusk Collective</strong>.</p>
+<p>Neo4j, a graph database, was used to power our web application. We want to elegantly and efficiently represent Holmusk’s resources as a network. To do so, we model it as a <a href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)">graph</a>, storing relationships between our resources.</p>
+<p>The diagram below can give you a sneak peek of what is behind the curtains of our solution.</p>
+<p><img src="../images/blogposts/neo4j_schema.png" /></p>
+<p>With reference to the above diagram, this allows our users to learn about relationships. For example, we could ask who has worked on a particular project or with a potential client.</p>
+<p>The answers we receive would then provide guidance for critical business decisions.</p>
+<hr />
+<h2 id="project-architecture">Project Architecture</h2>
+<p>In the team that was building this web app, each member came in with a different level of experience in software engineering. Hence, all members had to learn and adjust as they progressed. The difference in the level of experience also influenced the architecture of the project. Noel, the team lead, is going to reflect more on how the architectural choices.</p>
+<h3 id="frontend">Frontend</h3>
+<p>We used ReactJS + Tailwind.css for the frontend development because a member of the team was already familiar with these tools. Since the rest of the team did not have much experience with frontend development, going with this tech stack was the most prudent choice.</p>
+<h3 id="backend">Backend</h3>
+<p>While using Haskell would have been <a href="https://wiki.haskell.org/Why_Haskell_matters">ideal</a>, we took the timelines and experience levels of our team into consideration, and decided to go with JavaScript.</p>
+<p>Getting comfortable with Haskell would probably haven taken at least 2 weeks, after which there would still have been more to learn. Therefore, going with a language that was easy to pickup and learn was the best choice for us.</p>
+<h3 id="database">Database</h3>
+<p>In order to construct the network that we had in mind, the most prudent choice was to use a graph database (since <a href="https://en.wikipedia.org/wiki/Network_theory">networks can be represented as graphs</a>).</p>
+<p>We considered <a href="https://aws.amazon.com/neptune/">AWS Neptune</a> along with other alternatives, but in the end <a href="https://neo4j.com/">Neo4j</a> was decided on given its ease of use and developer friendliness.</p>
+<h3 id="on-the-simplicity-of-neo4j">On the simplicity of Neo4j</h3>
+<p>The queries in Neo4j pattern match against the actual database structure, which is helpful in gaining intuition in using them. The two most basic components are nodes and relationships. Using those components, we have the ability to model Holmusk’s network. The examples below can give you some insight about how it works.</p>
+<p><em>Creating nodes</em></p>
+<p><code>CREATE (person:PERSON {name: 'Noel'})</code></p>
+<p><em>Creating relationships</em></p>
+<p><code>CREATE (person)-[:Knows]-&gt;(another_person)</code></p>
+<p><em>Searching for nodes which match a relationship</em></p>
+<p><code>MATCH (person)-[:Knows]-&gt;(another_person) RETURN *</code></p>
+<p><img src="../images/blogposts/neo4j_relation.png" /></p>
+<hr />
+<p>Once the choices were made on the architecture of the project, further adaptations had to be made. The frontend engineer of Holmusk Collective, Ivan, reflects on some challenges he faced.</p>
+<blockquote>
+<p>“To be honest, one of the hardest things for me was to adapting from a more imperative style of programming to a more functional style of programming.”</p>
+</blockquote>
+<p>— Ivan</p>
+<p>Let us take a closer look at what that involved.</p>
+<hr />
+<h2 id="functional-vs-imperative">Functional vs Imperative</h2>
+<p>In the context of React, there are various types of components. Of interest to us are the <em>stateless (functional)</em> and <em>stateful (imperative) components.</em></p>
+<p><em>Statelessness</em> means that components do not manipulate any state within, they only render state passed to them in their <em>props</em>.</p>
+<p><em>Statefulness</em> means that components store state within and manipulate / render this state.</p>
+<p>An example of a button in an stateful style is:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">const</span> Button <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="kw">const</span> [name<span class="op">,</span>setName] <span class="op">=</span> <span class="at">useState</span>(<span class="st">'Ivan'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="kw">&lt;button</span> <span class="ot">onClick</span> <span class="op">=</span> <span class="va">{</span>()<span class="kw">=&gt;</span><span class="at">setName</span>(<span class="st">&quot;Tomatoes&quot;</span>)<span class="va">}</span><span class="er">)</span><span class="kw">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>    Set Name</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="kw">&lt;/button&gt;</span>	</span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="op">}</span></span></code></pre></div>
+<p>As a stateless component however, a button looks as follows:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">const</span> SET_USER_NAME <span class="op">=</span> <span class="st">'SET_USER_NAME'</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">const</span> INITIAL_STATE <span class="op">=</span> <span class="op">{</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="dt">name</span><span class="op">:</span><span class="kw">null</span><span class="op">,</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="dt">age</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="dt">occupation</span><span class="op">:</span> <span class="kw">null</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="op">}</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="kw">function</span> <span class="at">reducer</span>(state<span class="op">,</span> action) <span class="op">{</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>  <span class="cf">switch</span> (<span class="va">action</span>.<span class="at">type</span>) <span class="op">{</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a>    <span class="cf">case</span> <span class="dt">SET_USER_NAME</span><span class="op">:</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a>      <span class="kw">const</span> <span class="op">{</span> name <span class="op">}</span> <span class="op">=</span> <span class="va">action</span>.<span class="at">payload</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a>      <span class="cf">return</span> <span class="op">{</span>...<span class="at">state</span><span class="op">,</span>name<span class="op">}</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a>    <span class="cf">default</span><span class="op">:</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a>      <span class="cf">return</span> state</span>
+<span id="cb2-16"><a href="#cb2-16"></a>  <span class="op">}</span></span>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="op">}</span></span>
+<span id="cb2-18"><a href="#cb2-18"></a></span>
+<span id="cb2-19"><a href="#cb2-19"></a><span class="kw">const</span> setUserName <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a>  <span class="kw">const</span> [name<span class="op">,</span>dispatch] <span class="op">=</span> <span class="at">useReducer</span>(reducer<span class="op">,</span> INITIAL_STATE)</span>
+<span id="cb2-21"><a href="#cb2-21"></a></span>
+<span id="cb2-22"><a href="#cb2-22"></a>  <span class="cf">return</span>(</span>
+<span id="cb2-23"><a href="#cb2-23"></a>    <span class="kw">&lt;button</span> <span class="ot">onClick</span> <span class="op">=</span> <span class="va">{</span>()<span class="kw">=&gt;</span><span class="at">dispatch</span>(<span class="op">{</span><span class="dt">type</span><span class="op">:</span>SET_USER_NAME<span class="op">,</span><span class="dt">payload</span><span class="op">:{</span><span class="dt">name</span><span class="op">:</span><span class="st">&quot;Tomatoes&quot;</span><span class="op">}}</span>)<span class="op">&gt;</span></span>
+<span id="cb2-24"><a href="#cb2-24"></a>      Set Name</span>
+<span id="cb2-25"><a href="#cb2-25"></a>    &lt;/button<span class="op">&gt;</span></span>
+<span id="cb2-26"><a href="#cb2-26"></a>  )</span>
+<span id="cb2-27"><a href="#cb2-27"></a><span class="va">}</span></span></code></pre></div>
+<p>As you can see, using a functional style introduces boilerplate code. In a project set-up, the reduced, action types and buttons are to be defined in three separate files: <code>reducer.js</code> , <code>actionTypes.js</code> and <code>button.js</code> unlike the imperative’s clean and succinct single file definition. For now, it may seem like an imperative style of programming wins out flat as it is cleaner and more succinct. However, in the long run, the advantages of an imperative style do not outweigh the benefits of a more functional style, especially when it comes to two main areas — Testing and Nested Components.</p>
+<h3 id="testing">Testing</h3>
+<p>When it comes to testing a functional component, all we need to do is to run a simple Jest test. This is because the functional style code separates out frontend code into <a href="https://sporto.github.io/elm-workshop/03-tea/01-intro.html">model, view, message and update logic</a>. The react component only renders the model we feed it. Hence we avoid storing internal state for each component and mutating it through side effects. In larger systems this keeps the functionality of the component clear.</p>
+<p>Say our application hinges on a series of buttons being clicked and we have defined a reducer that looks like this:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">function</span> <span class="at">reducer</span>(state<span class="op">,</span> action) <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="cf">switch</span> (<span class="va">action</span>.<span class="at">type</span>) <span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>    <span class="cf">case</span> <span class="dt">action1</span><span class="op">:</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>      <span class="co">// do something</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a>    <span class="cf">case</span> <span class="dt">action2</span><span class="op">:</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>      <span class="co">// do something</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a></span>
+<span id="cb3-9"><a href="#cb3-9"></a>    <span class="cf">case</span> <span class="dt">action3</span><span class="op">:</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>      <span class="co">// do something</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a></span>
+<span id="cb3-12"><a href="#cb3-12"></a>    <span class="cf">default</span><span class="op">:</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a>      <span class="cf">return</span> state</span>
+<span id="cb3-14"><a href="#cb3-14"></a>  <span class="op">}</span></span></code></pre></div>
+<p>All we need in order to test our application logic is to run the following in jest and we have effectively ensured our function works the way we want it to.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb4-1"><a href="#cb4-1"></a><span class="at">it</span>(<span class="st">'returns new state for &quot;update&quot; type'</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="kw">const</span> initialState <span class="op">=</span> OurInitialState<span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="kw">const</span> updateAction <span class="op">=</span> <span class="op">{</span><span class="dt">type</span><span class="op">:</span> <span class="st">'update'</span> <span class="op">};</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="kw">const</span> updatedState <span class="op">=</span> <span class="at">reducer</span>(initialState<span class="op">,</span> <span class="op">{</span><span class="dt">type</span><span class="op">:</span>action1)<span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="at">expect</span>(updatedState).<span class="at">toEqual</span>(desiredState)<span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="op">}</span>)<span class="op">;</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="at">it</span>(<span class="st">'returns new state for &quot;update&quot; type'</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>  <span class="kw">const</span> initialState <span class="op">=</span> OurInitialState<span class="op">;</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>  <span class="kw">const</span> updateAction <span class="op">=</span> <span class="op">{</span><span class="dt">type</span><span class="op">:</span> <span class="st">'update'</span> <span class="op">};</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>  <span class="kw">const</span> updatedState <span class="op">=</span> <span class="at">reducer</span>(initialState<span class="op">,</span> <span class="op">{</span><span class="dt">type</span><span class="op">:</span>action2)<span class="op">;</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>  <span class="at">expect</span>(updatedState).<span class="at">toEqual</span>(desiredState)<span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="op">}</span>)<span class="op">;</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="at">it</span>(<span class="st">'returns new state for &quot;update&quot; type'</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>  <span class="kw">const</span> initialState <span class="op">=</span> OurInitialState<span class="op">;</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a>  <span class="kw">const</span> updateAction <span class="op">=</span> <span class="op">{</span><span class="dt">type</span><span class="op">:</span> <span class="st">'update'</span> <span class="op">};</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a>  <span class="kw">const</span> updatedState <span class="op">=</span> <span class="at">reducer</span>(initialState<span class="op">,</span> <span class="op">{</span><span class="dt">type</span><span class="op">:</span>action3)<span class="op">;</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a>  <span class="at">expect</span>(updatedState).<span class="at">toEqual</span>(desiredState)<span class="op">;</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a><span class="op">}</span>)<span class="op">;</span></span></code></pre></div>
+<p>In an imperative style, this would require a number of steps:</p>
+<ol type="1">
+<li>Create a virtual DOM</li>
+<li>Start working on some sort of <code>css/xPath</code> selected to select the relevant elements</li>
+<li>Use JavaScript to click individual components and ensure the relevant data pops-up</li>
+<li>Use more JavaScript and pray it doesn’t break when you modify a single CSS Class or variable</li>
+</ol>
+<h3 id="reusablenested-components">Reusable/Nested Components</h3>
+<p>Another benefit of a functional style becomes clear in the aspect of nested and large reusable components.</p>
+<p>For example, suppose there are three different buttons we want to render on our page, in an imperative style:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">const</span> Button <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="kw">const</span> [name<span class="op">,</span>setName] <span class="op">=</span> <span class="at">useState</span>(<span class="st">'Ivan'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="kw">const</span> function1 <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="va">doSomething</span> ...</span>
+<span id="cb5-6"><a href="#cb5-6"></a>  <span class="op">}</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a></span>
+<span id="cb5-8"><a href="#cb5-8"></a>  <span class="kw">const</span> function2 <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a>    <span class="va">doSomething</span> ...</span>
+<span id="cb5-10"><a href="#cb5-10"></a>  <span class="op">}</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a></span>
+<span id="cb5-12"><a href="#cb5-12"></a>  <span class="kw">const</span> function3 <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a>    doSomething</span>
+<span id="cb5-14"><a href="#cb5-14"></a>  <span class="op">}</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a></span>
+<span id="cb5-16"><a href="#cb5-16"></a>  <span class="cf">return</span> (</span>
+<span id="cb5-17"><a href="#cb5-17"></a></span>
+<span id="cb5-18"><a href="#cb5-18"></a>    <span class="kw">&lt;button</span> <span class="ot">onClick</span> <span class="op">=</span> <span class="va">{</span>()<span class="kw">=&gt;</span><span class="at">function1</span>()<span class="va">}</span><span class="er">)</span><span class="kw">&gt;</span></span>
+<span id="cb5-19"><a href="#cb5-19"></a>      Set Name</span>
+<span id="cb5-20"><a href="#cb5-20"></a>    <span class="kw">&lt;/button&gt;</span>	</span>
+<span id="cb5-21"><a href="#cb5-21"></a></span>
+<span id="cb5-22"><a href="#cb5-22"></a>    <span class="kw">&lt;button</span> <span class="ot">onClick</span> <span class="op">=</span> <span class="va">{</span>()<span class="kw">=&gt;</span><span class="at">function2</span>()<span class="va">}</span><span class="er">)</span><span class="kw">&gt;</span></span>
+<span id="cb5-23"><a href="#cb5-23"></a>      Set Name</span>
+<span id="cb5-24"><a href="#cb5-24"></a>    <span class="kw">&lt;/button&gt;</span>	</span>
+<span id="cb5-25"><a href="#cb5-25"></a></span>
+<span id="cb5-26"><a href="#cb5-26"></a>    <span class="kw">&lt;button</span> <span class="ot">onClick</span> <span class="op">=</span> <span class="va">{</span>()<span class="kw">=&gt;</span><span class="at">function3</span>()<span class="va">}</span><span class="er">)</span><span class="kw">&gt;</span></span>
+<span id="cb5-27"><a href="#cb5-27"></a>      Set Name</span>
+<span id="cb5-28"><a href="#cb5-28"></a>    <span class="kw">&lt;/button&gt;</span>	</span>
+<span id="cb5-29"><a href="#cb5-29"></a>  )</span>
+<span id="cb5-30"><a href="#cb5-30"></a><span class="op">}</span></span></code></pre></div>
+<p>Now, let’s examine our view logic for our functional component:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">const</span> setUserName <span class="op">=</span> ()<span class="kw">=&gt;</span><span class="op">{</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="kw">const</span> [name<span class="op">,</span>dispatch] <span class="op">=</span> <span class="at">useReducer</span>(reducer<span class="op">,</span> INITIAL_STATE)</span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="cf">return</span>(</span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="kw">&lt;button</span> <span class="ot">onClick</span> <span class="op">=</span> <span class="va">{</span>()<span class="kw">=&gt;</span><span class="at">dispatch</span>(<span class="op">{</span><span class="dt">type</span><span class="op">:</span>action1<span class="op">,</span><span class="dt">payload</span><span class="op">:{</span><span class="dt">name</span><span class="op">:</span><span class="st">&quot;Tomatoes&quot;</span><span class="op">}}</span>)<span class="op">&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>      Set Name</span>
+<span id="cb6-7"><a href="#cb6-7"></a>    &lt;/button<span class="op">&gt;</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a>    <span class="kw">&lt;button</span> <span class="ot">onClick</span> <span class="op">=</span> <span class="va">{</span>()<span class="kw">=&gt;</span><span class="at">dispatch</span>(<span class="op">{</span><span class="dt">type</span><span class="op">:</span>action2<span class="op">,</span><span class="dt">payload</span><span class="op">:{</span><span class="dt">name</span><span class="op">:</span><span class="st">&quot;Tomatoes&quot;</span><span class="op">}}</span>)<span class="op">&gt;</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>      Set Name</span>
+<span id="cb6-11"><a href="#cb6-11"></a>    &lt;/button<span class="op">&gt;</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a></span>
+<span id="cb6-13"><a href="#cb6-13"></a>    <span class="kw">&lt;button</span> <span class="ot">onClick</span> <span class="op">=</span> <span class="va">{</span>()<span class="kw">=&gt;</span><span class="at">dispatch</span>(<span class="op">{</span><span class="dt">type</span><span class="op">:</span>action3<span class="op">,</span><span class="dt">payload</span><span class="op">:{</span><span class="dt">name</span><span class="op">:</span><span class="st">&quot;Tomatoes&quot;</span><span class="op">}}</span>)<span class="op">&gt;</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a>      Set Name</span>
+<span id="cb6-15"><a href="#cb6-15"></a>    &lt;/button<span class="op">&gt;</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a>  )</span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="va">}</span></span></code></pre></div>
+<p>The latter is significantly easier to scale. All that’s needed to add an additional button is</p>
+<ol type="1">
+<li>Add a new action type</li>
+<li>Define a new case in the reducer</li>
+</ol>
+<p>All coding style talk aside, in Ivan’s words:</p>
+<blockquote>
+<p>This is <em>the actual</em> representation of trying to code up a frontend interface.</p>
+</blockquote>
+<p><img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" /></p>
+<hr />
+<p>As most projects, this project was managed using GitHub. This is another aspect where it was important to take the levels of experience into consideration. While some team members were comfortable with GitHub, others needed time and (thankfully revertible) accidents to learn. Daniel, one of the backend engineers reflects on his first close up experience with Git,</p>
+<blockquote>
+<p>“The extent of my exposure to Git before coming to Holmusk was pushing out from my local branch and overwriting my git repository for a school project. Having to collaborate with a team made me pickup Git really quickly, learning major concepts like what commits and branches are, and how to merge and rebase. However, things weren’t always so rosy, merging and rebasing threw me off a few times.”</p>
+</blockquote>
+<p>— Daniel</p>
+<p>Leyli, the other backend engineer, sums up her Git accidents:</p>
+<p><img src="../images/blogposts/in_trouble.jpeg" /></p>
+<hr />
+<h2 id="git-for-newbies">Git for newbies</h2>
+<h3 id="git-rebase-101">Git rebase 101</h3>
+<p>Rebasing is used when the time comes to merge <em><code>branch X</code></em> into the <em><code>master branch</code>.</em></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="ex">A</span> -<span class="op">&gt;</span> B <span class="co"># Our master branch has commits A and B</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="ex">A</span> -<span class="op">&gt;</span> B -<span class="op">&gt;</span> C -<span class="op">&gt;</span> D <span class="co"># Our branch X has commits C and D on top of those from master</span></span></code></pre></div>
+<p>Suppose we have a third branch, <code>Y</code> that gets merged into <code>master</code> first.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="ex">A</span> -<span class="op">&gt;</span> B -<span class="op">&gt;</span> E <span class="co"># Branch Y added commit E after being merged</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="ex">A</span> -<span class="op">&gt;</span> B -<span class="op">&gt;</span> C -<span class="op">&gt;</span> D <span class="co"># Now branch X differs from master, it does not have commit E!</span></span></code></pre></div>
+<p>Running a <code>rebase</code> of <code>branch X</code> against <code>master</code> stacks the differing commits on top of master:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="ex">A</span> -<span class="op">&gt;</span> B -<span class="op">&gt;</span> E -<span class="op">&gt;</span> C<span class="st">' -&gt; D'</span> <span class="co"># Commits C and D are now stacked on top of E.</span></span></code></pre></div>
+<p>Note that we mark the commits <code>C</code> and <code>D</code> with apostrophes. This is because they are different commits now, as we <em>rewrite</em> their commit history to consider the changes from <code>E</code> as well.</p>
+<p>The perk of rebasing is the linear history, which makes it easy to interpret the changes to the project.</p>
+<p>There are drawbacks however to this approach. Taking branch X as an example, we actually change commits <code>C</code> and <code>D</code> to <code>C'</code> and <code>D'</code>. This means that we <em>manually rewrite</em> our commit history. This can be dangerous when applied to commits with a lot of merge conflicts, since we can mutate important parts of commits <code>C</code> and <code>D</code>. With merge however, we can always reverse the changes by reversing the merge commit.</p>
+<p>To balance this out, we kept our commits small and ensured work was distributed with little overlap. This resulted in fewer <em>merge conflicts</em> and at the same time permitted us to keep a linear commit history.</p>
+<h3 id="git-reflog">Git reflog</h3>
+<p>Now as an example, say you have been working on a local branch that hasn’t been pushed out yet, and before pushing to origin, you rebase and accidentally delete all code written locally. What can you do? Luckily, <em>git reflog</em> allows to revert changes even after rebasing.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb10-1"><a href="#cb10-1"></a>daniel@daniel<span class="op">-</span>VirtualBox<span class="op">:~</span><span class="ss">/projects/HolmuskDB/backend$ git reflog</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="ss">c986303 HEAD@</span><span class="sc">{15}</span><span class="ss">: pull --rebase origin master: checkout c986303b53fbee559d94a3f9a663fe74eafc120f</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="ss">dabeb66 HEAD@</span><span class="sc">{16}</span><span class="ss">: commit: Tests, added index initialization via npm script</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="ss">0c06c73 HEAD@</span><span class="sc">{17}</span><span class="ss">: commit </span><span class="sc">(</span><span class="ss">amend</span><span class="sc">)</span><span class="ss">: Added FuzzySearch </span><span class="sc">(</span><span class="ss">#31</span><span class="sc">)</span></span></code></pre></div>
+<p><em>Git reflog</em> lists recently-performed actions, letting you see changes and move back and forth between them. At the line with HEAD@{15} you can see that the current branch has been rebased, if you wanted to revert to before the rebase, you could do <code>git checkout</code> to HEAD@{17} and move to a version of the codebase prior to the rebase. This tool saves <strong>a lot</strong> of time when accidents happen.</p>
+<hr />
+<p>We have seen the importance of logging changes in a branch, which hint at the importance of logging in general. It is always useful to be able to go back and see what changes have been made. Daniel reflects on how he came to the conclusion while working on the backend:</p>
+<blockquote>
+<p>When I first started resolving a given issue, I had a lot of trouble figuring out what the issue even is and where errors were popping up from. Was I piping the data incorrectly? Was the endpoint even receiving any input? I was basically working blind.</p>
+</blockquote>
+<hr />
+<p>Between the architecture, stylistic choices, and the Git learning curve, we as a team experienced personal growth in a professional environment. So let us see what each team member filled their lessons-learnt list with.</p>
+<hr />
+<h1 id="daniel">Daniel</h1>
+<p><em>Software Engineer Intern — API</em></p>
+<p>Off work, I enjoy reading webnovels and playing all sorts of different games. I dabble in boardgames like Mafia, tabletop games like Dungeons and Dragons and all sorts of different video games. Working at Holmusk is my first experience working with Javascript, I usually program in OCaml.</p>
+<h3 id="milestones-are-a-great-way-to-stay-motivated">Milestones are a great way to stay motivated</h3>
+<p>Admittedly at the beginning of the internship, I often times felt lost and confused, hurting my motivation to continue working on a task for the day. But the first time that I managed to get a web endpoint working, and tested it and saw my input go through a server and receive back an output, it felt really really invigorating. Since that point, I’ve always tried to look forward to significant milestones in progress, it helped me in staying motivated rather than shipping out a small feature here and there.</p>
+<hr />
+<h1 id="leyli">Leyli</h1>
+<p><em>Software Engineer Intern — Database wrangling</em></p>
+<p>In my free time, I play the piano, volleyball and sing in a barbershop chorus. When having access to a kitchen, I love experimenting with cooking and baking. Recently, having set up a small kitchen in my dorm suite, I have been working towards perfecting my knife skills.</p>
+<p>Coming in with no prior software development experience was frankly daunting. Week 1—think of those roller coasters that take you a good hundred meters up while building up the anticipation and excitement, but also bring you down real quick. With the onboarding, meeting a new team and the prospect of learning new things, I was somewhere at the top of that roller coaster, but having cloned the project repository to my laptop—well, that’s a different story. However, two months later, I still want to keep riding that roller coaster with all of its ups and downs. Here’s what I learned on my rides so far.</p>
+<h3 id="ask-google-or-ask-a-teammatejust-make-sure-you-ask">Ask Google or ask a teammate—just make sure you ask</h3>
+<p>As a rule of thumbs, if a question comes to mind, chances are someone has already asked it online. This is probably no news to developers, but I had to remind myself of this whenever I got too carried away trying to do everything on my own. Also remind yourself that if your teammates don’t know you are struggling, they can’t help you. This becomes especially important as we are working remotely. So, get comfortable with acknowledging that there are things you don’t know, and get comfortable with actively asking for help to learn those things.</p>
+<h3 id="as-a-newbie-especially-step-0break-down-tasks-and-step-1understand-exactly-what-needs-to-be-done">As a newbie especially, step 0—break down tasks, and step 1—understand exactly what needs to be done</h3>
+<p>In retrospect of Week 1, I realise most of the struggle happened because I wasn’t asking for enough clarifications, and help. Obviously (or not) enough, one can’t figure out how to do X without first knowing what X is. So, don’t skip steps.</p>
+<p>Writing a test prior to implementing a function helps one understand the functionality and take note of the edge cases—mark this as step 1.1.</p>
+<h3 id="console-and-documentation-are-your-friends-in-learning-a-language-from-scratch">Console and documentation are your friends in learning a language from scratch</h3>
+<p>Even as a newbie developer, you are probably familiar with the process of picking up the general syntax of a language. Once that’s done, the nitty-gritty of a language can be picked up from the documentation and experimentation in console. In my experience, that applied to both Cypher and JavaScript</p>
+<h3 id="set-your-priorities-straight">Set your priorities straight</h3>
+<p>Let’s face it—first versions are not pretty. At first, my personal priority was to get an endpoint up and running. It was not always the most efficient, safe or clean code, but at least it worked. Once you feel comfortable on that front, it is key to start reasoning about the program you are writing—think efficiency, mutability, data structures. That of course needs some prior theoretical knowledge as well as continuous research driven by thirst for knowledge.</p>
+<h3 id="code-quality">Code quality</h3>
+<p>When asked, “Can you come back in a year, look at the code and still understand it?”, and your answer is negative, then your code quality can be improved.</p>
+<hr />
+<h1 id="ivan">Ivan</h1>
+<p><em>Software Engineer Intern — Frontend design and implementation</em></p>
+<p>I like to read and sleep a lot in my free time. I’ve been quite obsessed lately with Ghost of Tsushima recently and that has taken a lot of my time. I think Software should have the same level of detail as a game, having a keen and obsessive level of detail for the end to end user experience and I hope to be able to do that in my own right!</p>
+<h3 id="great-autonomy">Great Autonomy!</h3>
+<p>Working at holmusk was an amazing experience! I had some prior experience working with Javascript and Python at an earlier internship but being part of a team to bring an idea from start to finish had me completely out of my comfort zone. I initially struggled with having to define my own tasks because of the ambiguity around it all. What do I do? What do I prioritise? It took a while getting used to it but the autonomy that came it was empowering.</p>
+<h3 id="functional-beats-imperative">Functional beats imperative</h3>
+<p>A functional style allows for cleaner testing and scaling of components. I didn’t go through it in extreme detail here but when it comes to nested components and all you’re passing down is an action type, development speed increasing significantly. With the ease that functional style brings to testing and scaling of your application, I hope I’ve given you some insight into why you should consider adopting a more functional style of programming for your applications too!</p>
+<hr />
+<h1 id="noel">Noel</h1>
+<p><em>Software Engineer Intern — Team lead</em></p>
+<p>I enjoy writing programs in functional languages my favourite being Haskell. I recently wrote a <a href="https://github.com/kwannoel/rust-raytracer">raytracer in Rust</a> with the help of <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">raytracing in a weekend</a>. When I have time, I enjoy playing <a href="https://boardgamegeek.com/collection/user/zachmane">board games</a> as well.</p>
+<p>This was the first time I led a team of engineers to build a product. It was daunting at first, but I got more comfortable with time thanks to my supportive teammates and guidance from the other engineers at Holmusk.</p>
+<h3 id="what-should-your-priorities-be">What should your priorities be?</h3>
+<p>To start off, you should set a few clear goals and priorities as a team lead to give decisions a direction.</p>
+<p>As a team lead, you should always have a clear mind and plan as much as you can. This gives your team confidence and trust in your decisions.</p>
+<p>You should keep an eye on the team’s stress levels as well. This prevents burnout which is disastrous in a project like this, with only 2-3 months of runway. You can consistently check whether the work is interesting for them and set sufficient buffers to cater for unforeseen setbacks.</p>
+<p>We should also set clear standards for code quality. This will be easier to enforce with tools such as <a href="https://eslint.org/">Eslint</a> or <a href="https://standardjs.com/">StandardJS</a>, which you can run in the CI. This makes code more readable and maintainable. You will be doing a lot of reviews and catching formatting errors again and again is not fun.</p>
+<h3 id="mentoring-tips">Mentoring tips</h3>
+<p>Some of the developers came in without experience in professional software development. That was alright because they were receptive learners.</p>
+<p>As a team lead your job would be to bring these people up to speed. In my case, I chose to pair program with them in the first 2 weeks. We paired back to back in 45 minute work / 15 minute break sessions, taking turns to write tests and implement features. This makes it easy for them to ask you questions.</p>
+<p>Observe your team and see who needs more active help. Not everyone will feel comfortable asking you for assistance when they need it. Sometimes they don’t know they do. As a team lead you can take initiative to ask them if they need guidance, especially for more junior developers. They can be stuck on problems for 1-2 days which should be resolved within an hour. You can also schedule brief daily standups which can give you indicators of the team’s progress and synchronise everyone.</p>
+<h3 id="be-conservative-and-practical">Be conservative and practical</h3>
+<p>You will encounter design decisions which seem reasonable. Those which require huge rewrites should be carefully considered. In most of the cases they are not immediate concerns. You can put them in an icebox first and revisit them only when necessary.</p>
+<h3 id="code-reviews">Code reviews</h3>
+<p>Get comfortable with saying no to yourself and the team. While writing code it is tempting to add in small changes here and there to improve the UI or code structure. If it isn’t in the scope of the PR, say no to these changes. They might be marginal in their impact but these add up and contribute to technical debt.</p>
+<p>Ask questions when you don’t understand something entirely. I hand waved PRs through at the start of the project for frontend and this came back to haunt me. I realised I could not understand the code structure. I had to spend a week to seek advice from other engineers and do some research about best practices for frontend. We settled on following design principles from Functional Reactive Programming which made the code a lot more readable and clear.</p>
+<p>Prioritise quality. It is tempting to prioritise features, but you will probably need to refactor parts of the code down the road. If your code base is of poor quality you will lose a lot more time trying to untangle the mess.</p>
+<hr />
+<h2 id="the-bigger-picture">The bigger picture</h2>
+<p>After the initial demo, besides pending improvements in code structure and quality, the team had to decide on the direction of the project— a business use case. In retrospect, coming up with a clear use case should have been our key priority as that would be a natural guide in writing specifications.</p>
+<p>Post initial demo, there were a few <em>actionables</em> such as enabling fuzzy search, or refining the parameters based on which the search feature will work, or refining the frontend, or populating the database. This indicates that having the first demo midway through internships was helpful because it provided a new user perspective, and thereby guidance on what features need to be furthered, or the opposite— limited.</p>
+<p>With this new user perspective, we decided on a single use case for Holmusk Collective. The current version of the app now has the ability to store information found in a contact card— name, contact information, location, company information, and position. In addition, the app stores the relations between the people whose contact information was added to the DB. Once stored, this information can be looked up through searching for a company, a position or a name.</p>
+<p>Looking back at the introduction, this is a subset of the originally-intended features. However, given the timeline and the standards we set as a team, we aimed for quality over quantity. Hence, although the intended potential hasn’t been fully exploited, the product does deliver functionality for a single use case that we were able to narrow down to.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+</div>
+
+   </div>
+ </div>
+
+ <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-md-12 mx-auto">
+        <p class="copyright text-muted">©2019 Holmusk</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
