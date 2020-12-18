@@ -1,7 +1,7 @@
 ---
 title: How is office culture produced, maintained, and transformed?
 author: Po Yee Ooi
-description: Writing our own library to parse and render Servant API types as documentation
+description: The process of making, maintaining, and improving the culture at work
 tags: culture
 ---
 
@@ -11,7 +11,7 @@ An organisation's culture consists of the human interactions within it; the make
 
 ## Act I: Making culture out of nothing at all
 
-### How do you create culture?*
+### How do you create culture?
 
 It is not straightforward, and certainly “not something you have control over”, says Subra, who has been with Holmusk since 2015. Workplace culture is organic, and a function of the type of people hired into the company. Just like the personalities of the employees and co-workers, the personality of the company is not something that can be changed easily. Thus, I think the key in creating a good workplace culture lies in the very first step: hiring the right people.
 
@@ -19,11 +19,11 @@ The right person at Holmusk is both work-oriented and people-oriented, and neith
 
 ### How do you hire the right people?
 
-It appears that the key to finding out if someone is the right fit lies in this sifting tray called the team lunch. This team lunch, which introduces the new candidate to 4-5 other representatives from various teams (e.g. UX, Software, Product, etc.) over a casual meal, happens during the hiring process to understand if the applicant fits well with the rest of the existing team. “When a new person joins, it is important for us to meet them physically to about them and what they want to learn and experience,” says Gracia, who has worked with Holmusk since 2018.
+It appears that the key to finding out if someone is the right fit lies in this sifting tray called the team lunch. This team lunch, which introduces the new candidate to 4-5 other representatives from various teams (e.g. UX, Software, Product, etc.) over a casual meal, happens during the hiring process to understand if the applicant fits well with the rest of the existing team. “When a new person joins, it is important for us to meet them physically, to understand what they want to learn and experience,” says Gracia, who has worked with Holmusk since 2018.
 
 ### Does moving everything online change this?
 
-The pandemic has caused the Singapore government to place strict restrictions on group gatherings. Therefore, team lunches are now being held online. In a teleconference setting, Gracia believes it will be harder to understand her counterparts as well; “I don’t have the chance to understand their working habits, and I won’t be able to help you as effectively.” This sentiment is shared by Subra and Oishik too. Subra added that it used to be a purely social interaction, but now it slightly resembles a second interview. “It is definitely harder to do online”, Oishik recognises. Some of the drawbacks include missing out on visual cues and body language, “but it’s better than nothing, and is a good approximation.” It isn’t ideal, but it will do for now.
+The pandemic has caused the Singapore government to place strict restrictions on group gatherings. Therefore, team lunches are now being held online. In a teleconference setting, Gracia believes it will be harder to understand her counterparts as well; “I don’t have the chance to understand their working habits, and I won’t be able to help them as effectively.” This sentiment is shared by Subra and Oishik too. Subra added that it used to be a purely social interaction, but now it slightly resembles a second interview. “It is definitely harder to do online”, Oishik recognises. Some of the drawbacks include missing out on visual cues and body language, “but it’s better than nothing, and is a good approximation.” It isn’t ideal, but it will do for now.
 
 
 ## Act II: Maintaining what’s good
