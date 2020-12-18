@@ -1,5 +1,5 @@
 ---
-title: How is office culture produced, maintained, and transformed?
+title: How is Holmusk's culture produced, maintained, and transformed?
 author: Po Yee Ooi
 description: The process of making, maintaining, and improving the culture at work
 tags: culture
@@ -23,7 +23,7 @@ It appears that the key to finding out if someone is the right fit lies in this 
 
 ### Does moving everything online change this?
 
-The pandemic has caused the Singapore government to place strict restrictions on group gatherings. Therefore, team lunches are now being held online. In a teleconference setting, Gracia believes it will be harder to understand her counterparts as well; “I don’t have the chance to understand their working habits, and I won’t be able to help them as effectively.” This sentiment is shared by Subra and Oishik too. Subra added that it used to be a purely social interaction, but now it slightly resembles a second interview. “It is definitely harder to do online”, Oishik recognises. Some of the drawbacks include missing out on visual cues and body language, “but it’s better than nothing, and is a good approximation.” It isn’t ideal, but it will do for now.
+The pandemic has caused the Singapore government to place strict restrictions on group gatherings. Therefore, team lunches are now being held online. In a teleconference setting, Gracia believes it will be harder to understand her counterparts as well; “due to the limitation of physical interactions, we have to come up with creative ways to engage with our colleagues more effectively.” This sentiment is shared by Subra and Oishik too. Subra added that it used to be a purely social interaction, but now it slightly resembles a second interview. “It is definitely harder to do online”, Oishik recognises. Some of the drawbacks include missing out on visual cues and body language, “but it’s better than nothing, and is a good approximation.” It isn’t ideal, but it will do for now.
 
 
 ## Act II: Maintaining what’s good
