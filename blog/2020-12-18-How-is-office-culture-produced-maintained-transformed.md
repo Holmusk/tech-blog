@@ -50,9 +50,7 @@ Holmusk has a global workforce located across various timezones, and that brings
 
 Since the majority of Holmusk's employees are based in Singapore, there is a physical office here. Prior to the spread of Covid-19, the Singapore team used to be in a physical meeting space, while colleagues from other locations joined via teleconference. There might be feelings of being distanced, which leads to lowered participation from the overseas teams. Hence, we have to “keep on finding ways to make communication asynchronous”, says Subra, and implement offsite virtual meetings too.
 
-Challenges also abound in finding new ways for the team to know each other personally. The methods mentioned above will still struggle to keep up with the rapidly expanding team. “The culture has not gotten better or worse, but it has changed,” adds Subra. The makeup of the people at the best product team has come a long way since its creation. Finally, Oishik concludes that the teams now are a lot more specialised and larger. Although this means there will be more intra-team bonding and less inter-team bonding,
-
-> “it reflects growth, and that’s a good thing.”
+Challenges also abound in finding new ways for the team to know each other personally. The methods mentioned above will still struggle to keep up with the rapidly expanding team. “The culture has not gotten better or worse, but it has changed,” adds Subra. The makeup of the people at the best product team has come a long way since its creation. Finally, Oishik concludes that the teams now are a lot more specialised and larger. Although this means there will be more intra-team bonding and less inter-team bonding, “it reflects growth, and that’s a good thing.”
 
 ## Concluding thoughts
 
