@@ -1,11 +1,11 @@
 ---
 title: Introduction to UX Research - Part 1
 author: Ann-Marie Ng
-description: improve a user’s experience of a product or service, taking into account user needs and goals, as well as business goals that need to be met.
+description: Using UX research to understand users
 tags: design, user experience, UX
 ---
 
-# Part 1: Introduction to UX research
+# **Introduction to UX research**
 
 Effective design requires an understanding of how people who will use and interact with our creations and products— *users—* think and behave, and what they desire. This is so that we can design tools and solutions that users find useful for problem solving, as well as meet their various needs and goals. **The last thing we want is to design something we *think* users will find useful, but really isn’t.** We want to meet real needs and solve real world problems. But how do we know what users really need and want?
 
@@ -61,4 +61,4 @@ For this particular round of user research, the questionnaire required **verbal 
 
 One thing to note about the UX Research process is that it's never linear! It's common to find yourself going through the Steps 1/2 again and again to further refine features in the UX design process. Communication with your team is very important here; jot down notes and keep track of the ongoing changes so that everyone is kept in the loop and understands what's going on at all times. 
 
-*Part 2* *talks about UX Research in the context of the healthcare industry!*
+***[Part 2](2021-03-09-Introduction-to-UX-research-Part-2.html) talks about UX Research in the context of the healthcare industry!***
