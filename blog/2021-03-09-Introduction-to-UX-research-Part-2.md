@@ -21,7 +21,7 @@ During my time in Holmusk as a UX research intern, the team was conducting resea
 
 # **Behind the Scenes**
 
-As mentioned in Part 1 of this blog post series, during my internship, I helped with creating a questionnaire on [UserTesting](https://app.usertesting.com/users/sign_in), an online platform which allows **users from all over the world to participate in user research studies anonymously.**  Via UserTesting, we recruited a range of professionals in the pharmaceutical industry. One of the key participants, whom we shortlisted as a potential candidate for further interviewing, was in a pharmacovigilance role, and he provided a lot of useful insights via the questionnaire. The team also approached business, IT and data professionals both within and outside Holmusk for industry-specific details to get a bird’s eye view of what pharma companies were interested in.
+As mentioned in [Part 1](2021-03-09-Introduction-to-UX-research-Part-1.html) of this blog post series, during my internship, I helped with creating a questionnaire on [UserTesting](https://app.usertesting.com/users/sign_in), an online platform which allows **users from all over the world to participate in user research studies anonymously.**  Via UserTesting, we recruited a range of professionals in the pharmaceutical industry. One of the key participants, whom we shortlisted as a potential candidate for further interviewing, was in a pharmacovigilance role, and he provided a lot of useful insights via the questionnaire. The team also approached business, IT and data professionals both within and outside Holmusk for industry-specific details to get a bird’s eye view of what pharma companies were interested in.
 
 # **Challenges**
 

@@ -41,7 +41,7 @@ Even after the product is launched, research is conducted to gather feedback for
 
     Knowledge of the users’ mindsets and differing workflows will help to determine ways to **meet their needs and address pain points.** Other than the target group, also consider studying other teams and professionals that work alongside that target group and talking to other professionals who know a lot about the target group. 
 
-2. **Critically observe**: Collect data ****
+2. **Critically observe**: Collect data
 
     In terms of data collection from users, there are many **techniques and tools** that can be used. You could collect quantitative data via a Likert scale to gauge the strength of your user’s thoughts and feelings regarding any aspect of your product. Or you could collect open ended responses to make it a qualitative study. UX Researchers can also conduct user interviews and have conversations where one can go deeper into underlying factors with the users. Rather than gauging the magnitude of your users’ opinions through questions, researchers can also conduct observational studies to observe body language, reactions and how your users interact with your product. Lastly, decide which **platforms, online or otherwise**, would be best preferred for the hosting of **questionnaires and interviews**. 
 
