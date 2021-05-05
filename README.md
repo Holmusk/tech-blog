@@ -46,3 +46,31 @@ DO NOT COPY TITLE HERE!
 Here comes the body of the post itself
 ...
 ```
+
+## Converting blogposts from various sources
+
+**Note: Please [build and run](how-to-build-and-run) to verify your changes locally before deploying.**
+
+#### docx
+
+You can use `pandoc` to do conversion:
+
+``` sh
+pandoc <filename>.docx -o <filename>.docx
+```
+
+Embedded images may be found by unzipping the document archive:
+
+``` sh
+> unzip <filename>.docx -d /tmp/<filename>
+
+> ls /tmp/<filename>
+...
+inflating: /tmp/pr/word/media/image1.png
+inflating: /tmp/pr/word/media/image2.jpg
+inflating: /tmp/pr/word/media/image3.jpg
+```
+
+#### Notion
+
+You can export the blogpost as `md`.
