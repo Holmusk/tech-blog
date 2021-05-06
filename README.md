@@ -56,7 +56,7 @@ Here comes the body of the post itself
 You can use `pandoc` to do conversion:
 
 ``` sh
-pandoc <filename>.docx -o <filename>.docx
+pandoc <filename>.docx -o <filename>.md
 ```
 
 Embedded images may be found by unzipping the document archive:
