@@ -6,6 +6,8 @@ description: Functions are first-class in Haskell, but there are other interesti
 tags: haskell
 ---
 
+# Learning Haskell
+
 When I first started picking up Haskell, there was an overwhelming
 emphasis on treating functions as "first-class citizens". As I peeled
 away the layers of abstraction and understood what I am actually
@@ -79,16 +81,15 @@ static String firstOfFirst(List<String>... strings) {
 *Figure 3: Example of ClassCastException (explosion) in Java*
 
 Haskell is able to avoid this by staying true to the meaning of types
-and not budging on type checks. This means a String ***[IS
-A]{.underline}*** String. It is not "similar" to another type like Text
-or a subclass of Object because such ideas don't exist!
+and not budging on type checks. This means a ***String is a String***. It is not "similar" to another type like *Text*
+or a subclass because Haskell's type system doesn't support subtyping!
 
 Once you understand everything is based on monads and the types of the
 monads mean only ONE thing, I think you are well on your way to
 dissecting a full-fledged Haskell codebase. Just keep in mind: whenever
 you are frustrated at trying to figure out what the type is, take a deep
 breath and hark back to the days when you received a value of
-*undefined* in React.
+*undefined* in Javascript.
 
 [^1]: This may sound like Haskell is more complicated than other
     languages for the sake of complexity but that's not true. Rather, it
@@ -97,5 +98,5 @@ breath and hark back to the days when you received a value of
 
 [^2]: Of course, it is a little bit more complicated than that.
 
-## References
+# References
     https://docs.oracle.com/javase/tutorial/java/generics/nonReifiableVarargsType.html
