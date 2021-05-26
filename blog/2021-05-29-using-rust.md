@@ -76,6 +76,6 @@ As mentioned, we have completely avoided the use of SQS in this architecture. Th
 ---
 
 [^1]: The image hash is calculated and used to check for duplicates.
-[^2]: Rust allows you to choose whichever one. Tokio is the most popular option in the Rust ecosystem. Check out [this resource](https://rust-lang.github.io/async-book/08_ecosystem/00_chapter.html) for more insight into async and the rust async ecosystem!
+[^2]: [Tokio](https://tokio.rs/) is an asynchronous runtime for the Rust programming language. A lot of languages have a built in async runtime. Rust allows you to choose whichever runtime you require. Tokio is the most popular option in the Rust ecosystem. Check out [this resource](https://rust-lang.github.io/async-book/08_ecosystem/00_chapter.html) for more insight into async and the rust async ecosystem!
 [^3]: Amazon [`SQS`](https://aws.amazon.com/sqs/) is a fully managed queue which we were using to distribute messages to different Rust service instances.
 [^4]: We used [`warp`](https://github.com/seanmonstar/warp) because of it's excellent tokio interoperability and flexible [`Filter`](https://docs.rs/warp/0.1.0/warp/trait.Filter.html) system.
