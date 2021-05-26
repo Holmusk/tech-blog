@@ -21,7 +21,7 @@ Before we dive into the infrastructure, it would help to take a look at what an 
 - The image is assigned a UUID.
 - The image is uploaded to a `s3` bucket.
 - The image is then downloaded, preprocessed, run through our models, and a food tip is generated for the image.
-- The food tip, inference results and the image hash form the final response.
+- The food tip, inference results and the image hash [^1] form the final response.
 
 ## Stack decisions: Rust and haskell
 
@@ -31,33 +31,33 @@ Rust is used for image preprocessing, model inference and sending the results ba
 
 # Introduction and pitfalls of the existing architecture
 
-![](/images/v2-arch-diagram.png)
+![](../images/blogposts/v2-arch-diagram.png)
 The internal organization of the rust service in this architecture is outlined above.
-There were 3 main parts, all running concurrently on 3 separate tokio runtimes - namely polling sqs, preprocessing and inferring from the images, and cleanup tasks.
+There were 3 main parts, all running concurrently on 3 separate tokio[^2] runtimes - namely polling sqs, preprocessing and running inference on the images, and cleanup tasks (like writing results to redis, notifying SQS that the image can now be taken off the queue, etc).
 
 The external processes related to this architecture are outlined below.
-![](/images/v2-external-arch-diagram.png)
+![](../images/blogposts/v2-external-arch-diagram.png)
 
-The main gripe we had was in the `S3` to `SQS` upload event notification. In our experiments, it was [very slow](https://github.com/Holmusk/aws_benchmarks/tree/master/s3_event_to_sqs), and we aim for the service to have a very low latency, with the goal being that every image that comes into the system should be scored/rated in under 1 second. Because of the way the system was designed, this meant that we'd need a pretty big makeover on the rust side, and some tweaks on the haskell side. This is also mentioned in the [AWS docs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/NotificationHowTo.html), where they point that `Typically, event notifications are delivered in seconds but can sometimes take a minute or longer`.
+The main gripe we had was in the `S3` to `SQS`[^3] upload event notification. In our benchmarks, it was [very slow](https://github.com/Holmusk/aws_benchmarks/tree/master/s3_event_to_sqs), and we aim for the service to have a very low latency, with the goal being that every image that comes into the system should be scored/rated in **under 1 second** . Because of the way the system was designed, this meant that we'd need a pretty big makeover on the rust side, and some tweaks on the haskell side if we were to get closer to meeting our performance goals. This is also mentioned in the [AWS docs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/NotificationHowTo.html), where they state that `Typically, event notifications are delivered in seconds but can sometimes take a minute or longer`.
 
 # The new architecture
 
-Like mentioned before, the main reason for redesigning the architecture was to avoid the `S3` to `SQS` upload event notification as speed was of high importance. In the process, we found out that we actually simplified it, by removing unnecessary moving parts.
+As mentioned above, the main reason for redesigning the architecture was to avoid the `S3` to `SQS` upload event notification as low latency is of high priority in this project. In the process, we found out that we actually simplified it, by removing unnecessary moving parts.
 
-Internally, the rust service now also has a webserver. The client facing API proxies the requests it receives to the rust webservers via a load balancer. In this version, we completely eliminate the use of SQS.
+Internally, the Rust service now also has a [webserver](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server). The client facing API (written in Haskell) proxies the HTTP requests it receives to the Rust server via a load balancer (AWS ELB). In this version of the architecture, we completely eliminate the use of a queue (`SQS`).
 
 ## Rust webserver internals
 
-![](/images/v3-arch-diagram.png)
+![](../images/blogposts/v3-arch-diagram.png)
 
-We use a [`warp`](https://github.com/seanmonstar/warp) for the webserver in rust.
+We have chosen to use [`warp`](https://github.com/seanmonstar/warp)[^4] for the web server implementation in Rust.
 
-Because we have multiple tokio runtimes, the messages are passed between them using a bounded channel. We also have an extra batching step, which converts a bunch of independent requests into a batch. The batching step is important as the model inference is efficient for an image batch as compared to a single image. Also, with a batch, we can parallelize the image download and preprocessing steps for extra speed gains.
+We have 3 tokio runtimes running simultaneous and somewhat independently of one another. These tokio runtimes communicate with each other using messages that are passed between them using bounded [channels](https://doc.rust-lang.org/book/ch16-02-message-passing.html). The "messages" we pass are custom [`Structs`](https://doc.rust-lang.org/book/ch05-01-defining-structs.html) we define for communication.
 
 Finally, because each request handler needs a result for it's own image, the handler initially creates a [oneshot](https://tokio-rs.github.io/tokio/doc/tokio/sync/oneshot/index.html) for receiving it's results and this is passed along as metadata for the image. Once the image is inferred to in a batch, the data is sent back to the image's corresponding request handler so the results can be returned.
 
 As mentioned, we have completely avoided the use of SQS in this architecture. The external architecture around the rust service now looks like this:
-![](/images/v3-external-arch-diagram.png)
+![](../images/blogposts/v3-external-arch-diagram.png)
 
 ### Types of channels used
 
@@ -72,3 +72,10 @@ As mentioned, we have completely avoided the use of SQS in this architecture. Th
 # Future possibilities
 
 ## Tighter integration via Rust's FFI
+
+---
+
+[^1]: The image hash is calculated and used to check for duplicates.
+[^2]: Rust allows you to choose whichever one. Tokio is the most popular option in the Rust ecosystem. Check out [this resource](https://rust-lang.github.io/async-book/08_ecosystem/00_chapter.html) for more insight into async and the rust async ecosystem!
+[^3]: Amazon [`SQS`](https://aws.amazon.com/sqs/) is a fully managed queue which we were using to distribute messages to different Rust service instances.
+[^4]: We used [`warp`](https://github.com/seanmonstar/warp) because of it's excellent tokio interoperability and flexible [`Filter`](https://docs.rs/warp/0.1.0/warp/trait.Filter.html) system.
