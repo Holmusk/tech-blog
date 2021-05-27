@@ -61,17 +61,16 @@ As mentioned, we have completely avoided the use of SQS in this architecture. Th
 
 ### Types of channels used
 
-### Monitoring health
+We use a couple of different channels for communication with different parts within the rust service. Check out [this chapter](https://doc.rust-lang.org/book/ch16-02-message-passing.html) from the rust book for some more context on how they work!
 
-#### to panic or not to panic
+- [`std::sync::mpsc`](https://doc.rust-lang.org/std/sync/mpsc/index.html) : This is the only `sync` channel we use (rest are `async`). We use it to communicate to the `main` function that the models have been loaded. Since the `main` function is `sync`, we use the builtin synchronous channel rust provides.
 
-#### webserver errors
+The other channels are `async`, meaning they wouldn't block the runtime while `await`ing for a result. They instead would pass the control back to the async runtime (`tokio` in this case) and other tasks can be performed. The `async` channels are :
 
-#### Tracking metrics
-
-# Future possibilities
-
-## Tighter integration via Rust's FFI
+- [`tokio::sync::oneshot`](https://docs.rs/tokio/1.5.0/tokio/sync/oneshot/index.html) : A oneshot is a channel which has only one reciever and one sender. The handler keeps the `Receiver` and sends it's `Sender` around the program. Once the processing is finished (a batch of requests are processed at a time) the oneshot is used to send the result back to the handler of that specific request, maintaining the one-one mapping of the request and response that's required.
+- [`async_channel::bounded`](https://docs.rs/async-channel/1.6.1/async_channel/fn.bounded.html), which we use like a _MPSC_(Multi Producer, Single Consumer) channel to pass data between many response handlers to the batching task, for example. It's used for communication between tasks. We'd like to use `tokio::sync::mpsc`, but :
+  - Tokio `1.x` [removed `try_recv`](https://github.com/tokio-rs/tokio/pull/3263) due to some errors. They plan on [adding it back](https://github.com/tokio-rs/tokio/issues/3350) later. This was a function we had to use.
+  - `async-channel` is [recommended](https://github.com/tokio-rs/tokio/issues/3350#issuecomment-773952897) as an alternative for the time being.
 
 ---
 
