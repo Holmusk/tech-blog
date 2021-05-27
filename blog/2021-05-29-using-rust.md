@@ -1,5 +1,5 @@
 ---
-title: <undecided>
+title: Building a reliable and tRUSTworthy web service 🦀
 author: Rohan
 github: RohanGautam
 description: Explore the use of rust in FoodDX, and go over key architectural decisions
