@@ -80,7 +80,7 @@ Pros :
 
 - The Rust community is awesome! A lot of people mention that this is a big strength of the ecosystem, and we fully agree. We found the rust community to be very intelligent, responsive, and friendly when we asked questions on online forums like Reddit and Stackoverflow.
 - The Rust book was a great resource. It had a lot of examples and explanations for Rust fundamentals, as well a great insight into multithreading and concurrency.
-- It's a little harder to refactor and make huge changes compared to other languages, but it's a worthwhile tradeoff for a critical service in our opinion, as it makes the code more robust and maintain. It's also easier to reason with ownership rules once you get the hang of it, compared to compiler magic that some other languages have.
+- It's a little harder to refactor and make huge changes compared to other languages, but it's a worthwhile tradeoff for a critical service in our opinion, as it makes the code more robust. It's also easier to reason with ownership rules once you get the hang of it, compared to compiler magic that some other languages have.
 
 Cons :
 
