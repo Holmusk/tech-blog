@@ -72,6 +72,26 @@ The other channels are `async`, meaning they wouldn't block the runtime while `a
   - Tokio `1.x` [removed `try_recv`](https://github.com/tokio-rs/tokio/pull/3263) due to some errors. They plan on [adding it back](https://github.com/tokio-rs/tokio/issues/3350) later. This was a function we had to use.
   - `async-channel` is [recommended](https://github.com/tokio-rs/tokio/issues/3350#issuecomment-773952897) as an alternative for the time being.
 
+# Takeaways
+
+These are our takeaways for using Rust in this project!
+
+Pros :
+
+- The Rust community is awesome! A lot of people mention that this is a big strength of the ecosystem, and we fully agree. We found the rust community to be very intelligent, responsive, and friendly when we asked questions on online forums like Reddit and Stackoverflow.
+- The Rust book was a great resource. It had a lot of examples and explanations for Rust fundamentals, as well a great insight into multithreading and concurrency.
+- It's a little harder to refactor and make huge changes compared to other languages, but it's a worthwhile tradeoff for a critical service in our opinion, as it makes the code more robust and maintain. It's also easier to reason with ownership rules once you get the hang of it, compared to compiler magic that some other languages have.
+
+Cons :
+
+- We faced some issues with key libraries not being well maintained. For example, we use AWS, and thus were using the [`rusoto`](https://github.com/rusoto/rusoto) library. Because this library had a dependency with Tokio `0.1.15`, we couldn't migrate to Tokio `1.x` for a really long time. We were able to do it later when `rusoto` was updated, but we still expected such a critical library to stay up to date. Things are looking good however, with AWS announcing that they are [working on an official SDK for Rust](https://aws.amazon.com/blogs/developer/a-new-aws-sdk-for-rust-alpha-launch/).
+- It's always a risk upgrading a lot of dependencies in the current state of rust, as you can almost always expect that some inter-dependency compatibility breaks. This was especially magnified in a large project such as this one.
+
+We also have some general takeaways and gotchas we encountered in this project:
+
+- _Tensorflow_ : We found that that the prebuilt tensorflow `C` bindings were not built/available for a large variety of GPU instances we use in AWS. This proved to be a little tedious to fix, as we had to manually compile tensorflow for the systems we use in production, without which we experienced slow inference times and model loading.
+- It's pretty hard and largely undocumented how to run ML model inference **in parallel** on GPUs, and we still have not fully explored that option.
+
 ---
 
 [^1]: The image hash is calculated and used to check for duplicates.
