@@ -17,7 +17,7 @@ It's a big project with a lot of components - the AI models, the app, and the ba
 Before we dive into the infrastructure, it would help to take a look at what an image goes through once it enters our system.
 
 - The image is assigned a UUID.
-- The image is uploaded to a `s3` bucket.
+- The image is uploaded to an AWS `s3` bucket.
 - The image is then downloaded, preprocessed, run through our models, and a food tip is generated for the image.
 - The food tip, inference results and the image hash [^1] form the final response.
 
@@ -76,9 +76,9 @@ These are our takeaways for using Rust in this project!
 
 Pros :
 
-- The Rust community is awesome! A lot of people mention that this is a big strength of the ecosystem, and we fully agree. We found the rust community to be very intelligent, responsive, and friendly when we asked questions on online forums like Reddit and Stackoverflow.
-- The Rust book was a great resource. It had a lot of examples and explanations for Rust fundamentals, as well a great insight into multithreading and concurrency.
-- It's a little harder to refactor and make huge changes compared to other languages, but it's a worthwhile tradeoff for a critical service in our opinion, as it makes the code more robust. It's also easier to reason with ownership rules once you get the hang of it, compared to compiler magic that some other languages have.
+- The Rust community is awesome! A lot of people mention that this is a big strength of the ecosystem, and we fully agree. We found the Rust community to be very knowledgeable, responsive, and friendly when we asked questions on online forums like Reddit and Stackoverflow.
+- The Rust book is a great resource. It has a lot of examples and explanations for Rust fundamentals, as well a great insight into multi-threading and concurrency.
+- It's a little harder to refactor and make huge changes compared to other languages because of Rust's ownership system, but it's a worthwhile tradeoff for a critical service in our opinion, as it makes the code more robust. It's also easier to reason with ownership rules once you get the hang of it, compared to compiler magic that some other languages have.
 
 Cons :
 
