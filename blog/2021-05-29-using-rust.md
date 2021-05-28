@@ -6,8 +6,6 @@ description: Explore the use of rust in FoodDX, and go over key architectural de
 tags: rust
 ---
 
-# Introduction to the product FoodDX
-
 ## Product intro
 
 [FoodDX](https://www.fooddx.com/) is a service which helps people get insights on how to improve their diet with the help from our proprietary AI technology and personalized feedback from our nutrition experts. In it's current stage, it helps score images of food taken through an app, and gives it a score from 1-5, and also provides personalized tips for the food.
@@ -23,7 +21,7 @@ Before we dive into the infrastructure, it would help to take a look at what an 
 - The image is then downloaded, preprocessed, run through our models, and a food tip is generated for the image.
 - The food tip, inference results and the image hash [^1] form the final response.
 
-## Stack decisions: Rust and haskell
+## Stack decisions: Rust and Haskell
 
 Haskell is used for the client facing API, and it's for other ad-hoc tasks such as reading/writing to a database among others.
 
@@ -68,7 +66,7 @@ We use a couple of different channels for communication with different parts wit
 The other channels are `async`, meaning they wouldn't block the runtime while `await`ing for a result. They instead would pass the control back to the async runtime (`tokio` in this case) and other tasks can be performed. The `async` channels are :
 
 - [`tokio::sync::oneshot`](https://docs.rs/tokio/1.5.0/tokio/sync/oneshot/index.html) : A oneshot is a channel which has only one reciever and one sender. The handler keeps the `Receiver` and sends it's `Sender` around the program. Once the processing is finished (a batch of requests are processed at a time) the oneshot is used to send the result back to the handler of that specific request, maintaining the one-one mapping of the request and response that's required.
-- [`async_channel::bounded`](https://docs.rs/async-channel/1.6.1/async_channel/fn.bounded.html), which we use like a _MPSC_(Multi Producer, Single Consumer) channel to pass data between many response handlers to the batching task, for example. It's used for communication between tasks. We'd like to use `tokio::sync::mpsc`, but :
+- [`async_channel::bounded`](https://docs.rs/async-channel/1.6.1/async_channel/fn.bounded.html), which we use like a _MPSC_ (Multi Producer, Single Consumer) channel to pass data between many response handlers to the batching task, for example. It's used for communication between tasks. We'd like to use `tokio::sync::mpsc`, but :
   - Tokio `1.x` [removed `try_recv`](https://github.com/tokio-rs/tokio/pull/3263) due to some errors. They plan on [adding it back](https://github.com/tokio-rs/tokio/issues/3350) later. This was a function we had to use.
   - `async-channel` is [recommended](https://github.com/tokio-rs/tokio/issues/3350#issuecomment-773952897) as an alternative for the time being.
 
@@ -91,8 +89,6 @@ We also have some general takeaways and gotchas we encountered in this project:
 
 - _Tensorflow_ : We found that that the prebuilt tensorflow `C` bindings were not built/available for a large variety of GPU instances we use in AWS. This proved to be a little tedious to fix, as we had to manually compile tensorflow for the systems we use in production, without which we experienced slow inference times and model loading.
 - It's pretty hard and largely undocumented how to run ML model inference **in parallel** on GPUs, and we still have not fully explored that option.
-
----
 
 [^1]: The image hash is calculated and used to check for duplicates.
 [^2]: [Tokio](https://tokio.rs/) is an asynchronous runtime for the Rust programming language. A lot of languages have a built in async runtime. Rust allows you to choose whichever runtime you require. Tokio is the most popular option in the Rust ecosystem. Check out [this resource](https://rust-lang.github.io/async-book/08_ecosystem/00_chapter.html) for more insight into async and the rust async ecosystem!
