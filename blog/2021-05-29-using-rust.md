@@ -29,12 +29,12 @@ Rust is used for image preprocessing, model inference and sending the results ba
 
 # Introduction and pitfalls of the existing architecture
 
-![](../images/blogposts/v2-arch-diagram.png)
+![](/images/blogposts/v2-arch-diagram.png)
 The internal organization of the rust service in this architecture is outlined above.
 There were 3 main parts, all running concurrently on 3 separate tokio[^2] runtimes - namely polling SQS, preprocessing and running inference on the images, and cleanup tasks (like writing results to redis, notifying SQS that the image can now be taken off the queue, etc).
 
 The external processes related to this architecture are outlined below.
-![](../images/blogposts/v2-external-arch-diagram.png)
+![](/images/blogposts/v2-external-arch-diagram.png)
 
 The main gripe we had was in the `S3` to `SQS`[^3] upload event notification. In our benchmarks, it was [very slow](https://github.com/Holmusk/aws_benchmarks/tree/master/s3_event_to_sqs), and we aim for the service to have a very low latency, with the goal being that every image that comes into the system should be scored/rated in **under 1 second** . Because of the way the system was designed, this meant that we'd need a pretty big makeover on the rust side, and some tweaks on the haskell side if we were to get closer to meeting our performance goals. This is also mentioned in the [AWS docs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/NotificationHowTo.html), where they state that `Typically, event notifications are delivered in seconds but can sometimes take a minute or longer`.
 
@@ -46,7 +46,7 @@ Internally, the Rust service now also has a [webserver](https://developer.mozill
 
 ## Rust webserver internals
 
-![](../images/blogposts/v3-arch-diagram.png)
+![](/images/blogposts/v3-arch-diagram.png)
 
 We have chosen to use [`warp`](https://github.com/seanmonstar/warp)[^4] for the web server implementation in Rust.
 
@@ -55,7 +55,7 @@ We have 3 tokio runtimes running simultaneous and somewhat independently of one 
 Finally, because each request handler needs a result for its own image, the handler initially creates a [oneshot](https://tokio-rs.github.io/tokio/doc/tokio/sync/oneshot/index.html) for receiving it's results and this is passed along as metadata for the image. Once the image is inferred in a batch, the data is sent back to the image's corresponding request handler so the results can be returned.
 
 As mentioned, we have completely avoided the use of SQS in this architecture. The external architecture around the rust service now looks like this:
-![](../images/blogposts/v3-external-arch-diagram.png)
+![](/images/blogposts/v3-external-arch-diagram.png)
 
 ### Types of channels used
 
